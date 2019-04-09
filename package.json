@@ -14,9 +14,14 @@
   },
   "dependencies": {
     "gatsby": "^2.3.5",
-    "gatsby-plugin-styletron": "^3.0.5",
+    "gatsby-plugin-netlify": "^2.0.13",
+    "gatsby-plugin-react-helmet": "^3.0.12",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-headroom": "^2.2.8",
+    "react-helmet": "^5.2.0",
+    "styletron-engine-atomic": "^1.1.0",
+    "styletron-react": "^4.4.6"
   },
   "devDependencies": {
     "prettier": "^1.16.4"

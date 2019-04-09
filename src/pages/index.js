@@ -1,52 +1,64 @@
 import React from "react"
-import { styled, withStyle } from "styletron-react"
-import styletron from "gatsby-plugin-styletron"
+import { styled } from "styletron-react"
+import Layout from "../components/layout"
 
-const fancyStyles = {
+const IndexText = styled("p", { 
+  fontStyle: "IndexText", 
+  color: "green",
+  fontFamily: "Meiryo",
   ":hover": {
-    backgroundColor: "papayawhip",
-  },
-  "@media (max-width: 768px)": {
-    ":hover": {
-      animationDuration: "3s",
-      animationFillMode: "forwards",
-      animationName: {
-        "0%": {
-          transform: "translate3d(0,0,0)",
-        },
-        to: {
-          transform: "translate3d(100%,0,0)",
-        },
-      },
-      willChange: "transform",
-    },
-    fontFamily: {
-      fontStyle: "normal",
-      fontWeight: "normal",
-      src:
-        "url(https://fonts.gstatic.com/s/inconsolata/v16/QldKNThLqRwH-OJ1UHjlKGlW5qhExfHwNJU.woff2) format(woff2)",
-    },
-    fontSize: "24px",
-  },
-  fontSize: "36px",
-}
+    color: "purple"
+  }
+});
+IndexText.displayName = "IndexText";
 
-const divStyles = {
-  border: "1px dashed #333",
-}
+export default class IndexPage extends React.Component {
+  state = {
+    firstName: "",
+    lastName: "",
+  }
 
-const RedAnchor = styled("a", { color: "red" })
-const FancyAnchor = withStyle(RedAnchor, { fontFamily: "cursive" })
+  handleInputChange = event => {
+    const target = event.target
+    const value = target.value
+    const name = target.name
 
-export default () => {
-  const css = styletron().css
+    this.setState({
+      [name]: value,
+    })
+  }
 
-  return (
-    <div
-      className={css({ backgroundColor: "#cff", ...divStyles, ...fancyStyles })}
-    >
-      <FancyAnchor>Hi!</FancyAnchor>
-      <div className={css(fancyStyles)}>Cool huh?</div>
-    </div>
-  )
+  handleSubmit = event => {
+    event.preventDefault()
+    alert(`Welcome ${this.state.firstName} ${this.state.lastName}!`)
+  }
+
+  render() {
+    return (
+      <Layout>
+        <IndexText>Texte partie de Index.js</IndexText>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            First name
+            <input
+              type="text"
+              name="firstName"
+              value={this.state.firstName}
+              onChange={this.handleInputChange}
+            />
+          </label>
+          <label>
+            Last name
+            <input
+              type="text"
+              name="lastName"
+              value={this.state.lastName}
+              onChange={this.handleInputChange}
+            />
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </Layout>
+    )
+  }
 }
