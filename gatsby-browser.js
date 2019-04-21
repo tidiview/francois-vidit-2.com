@@ -1,7 +1,7 @@
 import React from "react"
 import { Client as Styletron } from "styletron-engine-atomic"
 import { Provider } from "styletron-react"
-import "./src/components/layout.css"
+import "./src/pages/index.css"
 
 const engine = new Styletron({
   hydrate: document.getElementsByClassName("_styletron_hydrate_")

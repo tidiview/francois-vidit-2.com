@@ -1,8 +1,24 @@
+const path = require(`path`)
+
 module.exports = {
   siteMetadata: {
     title: 'francois-vidit-2.com',
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/images/`
+      }
+    },
     `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-netlify`,
@@ -16,6 +32,8 @@ module.exports = {
         generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
       }
     },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     `gatsby-plugin-react-helmet`
   ],
 }
