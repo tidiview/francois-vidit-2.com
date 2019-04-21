@@ -13,7 +13,7 @@ const HeaderDiv = styled("header", {
 const HeaderH1 = styled("header", { 
   marginBlockStart: 0
 });
-HeaderH1.displayName = "HeaderH1";
+HeaderH1.displayName = "HeaderH1"; 
 
 export default () => (
   <StaticQuery

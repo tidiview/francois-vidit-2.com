@@ -13,19 +13,18 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "emailjs-com": "^2.3.2",
-    "gatsby": "^2.3.5",
-    "gatsby-plugin-netlify": "^2.0.13",
+    "gatsby": "^2.3.25",
+    "gatsby-plugin-netlify": "^2.0.14",
     "gatsby-plugin-react-helmet": "^3.0.12",
+    "install": "^0.12.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-headroom": "^2.2.8",
     "react-helmet": "^5.2.0",
     "styletron-engine-atomic": "^1.1.0",
     "styletron-react": "^4.4.6"
   },
   "devDependencies": {
-    "prettier": "^1.16.4"
+    "prettier": "^1.17.0"
   },
   "repository": {
     "type": "git",

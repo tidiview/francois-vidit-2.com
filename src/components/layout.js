@@ -1,6 +1,6 @@
 import React from "react"
 import { styled } from "styletron-react"
-import Headroom from "../components/headroom"
+import Header from "../components/header";
 
 const Colored = styled("div", { 
   backgroundColor: "lightgrey",
@@ -10,7 +10,8 @@ const Colored = styled("div", {
 Colored.displayName = "Colored";
 
 const Italic = styled("p", { 
-  fontStyle: "italic", 
+  fontStyle: "italic",
+  marginBlockStart: "0px",
   color: "black",
   fontFamily: "Meiryo",
   ":hover": {
@@ -19,13 +20,11 @@ const Italic = styled("p", {
 });
 Italic.displayName = "Italic";
 
-function Home({children}) {
+function Home() {
   return (
     <Colored>
-    <Headroom>
-    </Headroom>
+    <Header></Header>
     <Italic>これは日本語にはありませんね☆</Italic>
-    {children}
     <p>２０１８年１１月１１日
 
 「国体」の創出ー徂徠制作論と水戸学
