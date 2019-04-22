@@ -2,24 +2,28 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: 'francois-vidit-2.com',
+    title: `francois-vidit-2.com`,
+    siteUrl: `https://blissful-murdock-92b8b6.netlify.com`,
+    description: `second version of francois-vidit.com after grav`,
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `${__dirname}/src/`
+        path: path.join(__dirname, `src`)
       }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-sharp`,
       options: {
-        name: `images`,
-        path: `${__dirname}/images/`
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 75,
       }
     },
-    `gatsby-plugin-netlify`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
@@ -31,9 +35,6 @@ module.exports = {
         transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
         generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
       }
-    },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    `gatsby-plugin-react-helmet`
-  ],
+    }
+  ]
 }
