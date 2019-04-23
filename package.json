@@ -8,11 +8,13 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@svgr/webpack": "^4.2.0",
     "gatsby": "^2.3.25",
     "gatsby-image": "^2.0.39",
     "gatsby-plugin-netlify": "^2.0.14",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.0.35",
+    "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-transformer-sharp": "^2.1.18",
     "install": "^0.12.2",
