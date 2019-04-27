@@ -5,7 +5,7 @@ import Buttons from '../components/three-button'
 import Arrow from '../components/landing-curtain-arrow-svg'
 
 const Layout = styled('div', {
-    margin: '.85rem 0 1.7rem 0',
+    margin: '.85rem 0 0 0',
     left: '30%',
     right: '30%',
     backgroundColor: 'rgba(255, 255, 255, 0)',

@@ -14,7 +14,7 @@ const LeftContainer = styled('div', {
     borderRadius: '3px',
     margin: '2px 0 2px 4px',
     padding: '26px 8px 3px 8px',
-    backgroundColor: 'rgba(255,255,255,.1)',
+    backgroundColor: 'rgba(0,0,0,.15)',
     "@media screen and (max-width: 959px) and (min-width: 768px)": {
         paddingTop: '24px',
     },
@@ -33,7 +33,7 @@ const CenterContainer = styled('div', {
     borderRadius: '3px',
     margin: '2px 3px 2px 3px',
     padding: '30px 12px 5px 12px',
-    backgroundColor: 'rgba(255,255,255,.1)',
+    backgroundColor: 'rgba(0,0,0,.2)',
     "@media screen and (max-width: 959px) and (min-width: 768px)": {
         paddingTop: '28px',
     },
@@ -52,7 +52,7 @@ const RightContainer = styled('div', {
     borderRadius: '3px',
     margin: '2px 4px 2px 0',
     padding: '26px 8px 3px 8px',
-    backgroundColor: 'rgba(255,255,255,.1)',
+    backgroundColor: 'rgba(0,0,0,.2)',
     "@media screen and (max-width: 959px) and (min-width: 768px)": {
         paddingTop: '23px',
     },
@@ -106,6 +106,7 @@ CenterRuby.displayName = 'CenterRuby';
 
 
 const SideRt = styled('rt', {
+    fontWeight: 400,
     fontSize: '13.5px',
     letterSpacing: '.1em',
     "@media screen and (max-width: 959px) and (min-width: 768px)": {
@@ -120,6 +121,7 @@ const SideRt = styled('rt', {
 SideRt.displayName = 'SideRt';
 
 const CenterRt = styled('rt', {
+    fontWeight: 400,
     fontSize: '16.5px',
     letterSpacing: '.1em',
     "@media screen and (max-width: 959px) and (min-width: 768px)": {
