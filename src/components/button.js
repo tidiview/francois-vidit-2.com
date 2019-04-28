@@ -4,7 +4,7 @@ import { Provider } from "styletron-react"
 
 const Button = styled("button", ({ $theme }) => ({
     backgroundColor: $theme.colors.primary[2],
-    color: "#FFF",
+    color: "#fff",
     fontSize: $theme.sizing[4],
     padding: $theme.sizing[1]
     })

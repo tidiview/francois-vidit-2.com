@@ -15,6 +15,7 @@ const LeftContainer = styled('div', {
     margin: '2px 0 2px 4px',
     padding: '26px 8px 3px 8px',
     backgroundColor: 'rgba(0,0,0,.15)',
+    transition: 'all 0.4s ease',
     "@media screen and (max-width: 959px) and (min-width: 768px)": {
         paddingTop: '24px',
     },
@@ -34,6 +35,7 @@ const CenterContainer = styled('div', {
     margin: '2px 3px 2px 3px',
     padding: '30px 12px 5px 12px',
     backgroundColor: 'rgba(0,0,0,.2)',
+    transition: 'all 0.4s ease',
     "@media screen and (max-width: 959px) and (min-width: 768px)": {
         paddingTop: '28px',
     },
@@ -53,6 +55,7 @@ const RightContainer = styled('div', {
     margin: '2px 4px 2px 0',
     padding: '26px 8px 3px 8px',
     backgroundColor: 'rgba(0,0,0,.2)',
+    transition: 'all 0.4s ease',
     "@media screen and (max-width: 959px) and (min-width: 768px)": {
         paddingTop: '23px',
     },

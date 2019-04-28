@@ -3,8 +3,7 @@ import { styled } from 'styletron-react'
 import Contact from '../components/contact'
 
 const Layout = styled('div', {
-    width: '100%',
-    padding: '6vh 0 2.1vh 0',
+    padding: '5vh .938rem 10vh',
     backgroundColor: '#666',
 });
 Layout.displayName = 'Layout';
