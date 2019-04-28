@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReactComponent as Star } from '../assets/landing-curtain-arrow.svg'
+import { ReactComponent as Star } from '../assets/svg-blog-section-blog-ja.svg'
 
 const App = () => (
     <Star />

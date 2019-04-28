@@ -4,6 +4,11 @@ import { styled } from 'styletron-react'
 import Img from 'gatsby-image'
 import Header from '../components/header'
 import CurtainMeta from '../components/curtain-meta'
+import CurtainBlog from '../components/curtain-blog'
+import CurtainDocs from '../components/curtain-docs'
+import CurtainProfile from '../components/curtain-profile'
+import CurtainAffectation from '../components/curtain-affectation'
+import CurtainForm from '../components/curtain-form'
 
 const Layout = styled('div', {
   height: '100%'
@@ -15,7 +20,11 @@ export default ({ data }) => (
     <Header></Header>
     <Img style={{ height: '100vh' }} fluid={{ ...data.file.childImageSharp.fluid, sizes:'(max-width: 767px) 98vw, (min-width: 959px) 50vw, 86w' }} alt="" />
     <CurtainMeta></CurtainMeta>
-    <p>This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p>
+    <CurtainBlog></CurtainBlog>
+    <CurtainDocs></CurtainDocs>
+    <CurtainProfile></CurtainProfile>
+    <CurtainAffectation></CurtainAffectation>
+    <CurtainForm></CurtainForm>
   </Layout>
 )
 
