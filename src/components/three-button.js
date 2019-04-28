@@ -24,6 +24,7 @@ const LeftContainer = styled('div', {
     },
     ":hover": {
         backgroundColor: 'rgba(255,255,255,.25)',
+        cursor: 'pointer',
     },
 });
 LeftContainer.displayName = 'LeftContainer';
@@ -44,6 +45,7 @@ const CenterContainer = styled('div', {
     },
     ":hover": {
         backgroundColor: 'rgba(255,255,255,.25)',
+        cursor: 'pointer',
     },
 });
 CenterContainer.displayName = 'CenterContainer';
@@ -64,6 +66,7 @@ const RightContainer = styled('div', {
     },
     ":hover": {
         backgroundColor: 'rgba(255,255,255,.25)',
+        cursor: 'pointer',
     },
 });
 RightContainer.displayName = 'RightContainer';

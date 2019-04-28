@@ -41,7 +41,7 @@ export default () => (
   <Layout>
       <Text1></Text1>
       <H4>お問い合わせ</H4>
-      <Text2>問い合わせるには、以下のフォームを御記入を：</Text2>
+      <Text2>問い合わせるには、以下のフォームをご記入を：</Text2>
       <Contact></Contact>
   </Layout>
 )

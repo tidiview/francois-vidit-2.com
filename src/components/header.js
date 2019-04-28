@@ -41,13 +41,42 @@ const Nav = styled("nav", ({ $theme }) => ({
   right: 0,
   paddingRight: '15rem',
   "@media screen and (max-width: 959px) and (min-width: 768px)": {
-      paddingRight: '5rem'
+    top: 0,
+    paddingRight: '5rem',
+    paddingTop: '.8rem',
   },
   "@media screen and (max-width: 767px)": {
-      paddingRight: '.5rem'
+    top: 0,
+    paddingRight: '.5rem',
+    paddingTop: '.8rem',
   },
 }));
 Nav.displayName = "Nav";
+
+const SpanLarge = styled("span", ({ $theme }) => ({
+  display: 'initial',
+  fontFamily: 'Yu Gothic Medium, sans-serif',
+  "@media screen and (max-width: 959px) and (min-width: 768px)": {
+    display: 'none',
+  },
+  "@media screen and (max-width: 767px)": {
+    display: 'none',
+  },
+}));
+SpanLarge.displayName = "SpanLarge";
+
+const SpanReduced = styled("span", ({ $theme }) => ({
+  display: 'none',
+  "@media screen and (max-width: 959px) and (min-width: 768px)": {
+    display: 'initial',
+    fontSize: '32px',
+  },
+  "@media screen and (max-width: 767px)": {
+    display: 'initial',
+    fontSize: '32px',
+  },
+}));
+SpanReduced.displayName = "SpanReduced";
 
 function Home() {
   return (
@@ -77,9 +106,11 @@ function Home() {
                 <Link to="/">
                   <LogoHeader />
                 </Link>
-                <Nav>
-                  <Link to="/profile/" style={{ color: "white", textDecorationLine: "none" }}>Profile</Link>
-                </Nav>
+                  <Nav>
+                    <Link to="/profile/" style={{ color: "white", textDecorationLine: "none" }}>
+                    <SpanLarge>プロフィール</SpanLarge><SpanReduced>☰</SpanReduced>
+                    </Link>
+                  </Nav>
               </HeaderDiv>
               </ThemeProvider>
           )
