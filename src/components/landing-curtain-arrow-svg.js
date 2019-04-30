@@ -7,6 +7,7 @@ const Layout = styled('div', {
     width: '42px',
     height: '64px',
     margin: 'auto',
+    cursor: 'pointer',
 });
 Layout.displayName = 'Layout';
 
