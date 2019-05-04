@@ -5,7 +5,8 @@ import ProfileJa from '../components/svg-profile-section-profile-ja'
 
 const Layout = styled('div', {
     width: '100%',
-    padding: '6vh 0 2.1vh 0',
+    padding: '1.5vh 0 2.1vh 0',
+    textAlign: 'center',
     backgroundColor: '#B7E2E6',
 });
 Layout.displayName = 'Layout';

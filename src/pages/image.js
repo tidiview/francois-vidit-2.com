@@ -11,7 +11,7 @@ import CurtainAffectation from '../components/curtain-affectation'
 import CurtainForm from '../components/curtain-form'
 
 const Layout = styled('div', {
-  height: '100%'
+  height: '100%',
 });
 Layout.displayName = 'Layout';
 

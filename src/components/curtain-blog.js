@@ -7,6 +7,7 @@ import BlogJa from '../components/svg-blog-section-blog-ja'
 const Layout = styled('div', {
   width: '100%',
   padding: '6vh 0 2.1vh 0',
+  textAlign: 'center',
   backgroundColor: '#000',
 });
 Layout.displayName = 'Layout';
@@ -39,7 +40,7 @@ const Text2 = styled('p', {
 Text2.displayName = 'Text2';
 
 export default () => (
-  <Layout>
+  <Layout id="curtain1">
     <MarkFooter></MarkFooter>
     <Text1>とは、</Text1>
     <Link to="/blog">

@@ -13,14 +13,14 @@ const LeftContainer = styled('div', {
     border: '1px solid rgba(255,255,255,.75)',
     borderRadius: '3px',
     margin: '2px 0 2px 4px',
-    padding: '26px 8px 3px 8px',
+    padding: '10px 8px 3px 8px',
     backgroundColor: 'rgba(0,0,0,.15)',
     transition: 'all 0.4s ease',
     "@media screen and (max-width: 959px) and (min-width: 768px)": {
-        paddingTop: '24px',
+        paddingTop: '5px',
     },
     "@media screen and (max-width: 767px)": {
-        paddingTop: '22px',
+        paddingTop: '4px',
     },
     ":hover": {
         backgroundColor: 'rgba(255,255,255,.25)',
@@ -34,14 +34,14 @@ const CenterContainer = styled('div', {
     border: '1px solid rgba(255,255,255,.75)',
     borderRadius: '3px',
     margin: '2px 3px 2px 3px',
-    padding: '30px 12px 5px 12px',
+    padding: '12px 12px 3px 12px',
     backgroundColor: 'rgba(0,0,0,.2)',
     transition: 'all 0.4s ease',
     "@media screen and (max-width: 959px) and (min-width: 768px)": {
-        paddingTop: '28px',
+        paddingTop: '8px',
     },
     "@media screen and (max-width: 767px)": {
-        paddingTop: '26px',
+        paddingTop: '6px',
     },
     ":hover": {
         backgroundColor: 'rgba(255,255,255,.25)',
@@ -55,14 +55,14 @@ const RightContainer = styled('div', {
     border: '1px solid rgba(255,255,255,.75)',
     borderRadius: '3px',
     margin: '2px 4px 2px 0',
-    padding: '26px 8px 3px 8px',
+    padding: '10px 8px 3px 8px',
     backgroundColor: 'rgba(0,0,0,.2)',
     transition: 'all 0.4s ease',
     "@media screen and (max-width: 959px) and (min-width: 768px)": {
-        paddingTop: '23px',
+        paddingTop: '5px',
     },
     "@media screen and (max-width: 767px)": {
-        paddingTop: '22px',
+        paddingTop: '4px',
     },
     ":hover": {
         backgroundColor: 'rgba(255,255,255,.25)',
@@ -74,6 +74,8 @@ RightContainer.displayName = 'RightContainer';
 
 
 const SideRuby = styled('ruby', {
+    display: 'inline-flex',
+    flexDirection: 'column-reverse',
     color: 'rgba(255,255,255,.9)',
     fontFamily: 'Meiryo',
     fontSize: '22px',
@@ -92,6 +94,8 @@ const SideRuby = styled('ruby', {
 SideRuby.displayName = 'SideRuby';
 
 const CenterRuby = styled('ruby', {
+    display: 'inline-flex',
+    flexDirection: 'column-reverse',
     color: 'rgba(255,255,255,.9)',
     fontFamily: 'Meiryo',
     fontSize: '33px',
@@ -112,6 +116,8 @@ CenterRuby.displayName = 'CenterRuby';
 
 
 const SideRt = styled('rt', {
+    display: 'inline',
+    lineHeight: 1,
     fontWeight: 400,
     fontSize: '13.5px',
     letterSpacing: '.1em',
@@ -127,6 +133,9 @@ const SideRt = styled('rt', {
 SideRt.displayName = 'SideRt';
 
 const CenterRt = styled('rt', {
+    display: 'inline',
+    lineHeight: 1,
+    margin:0,
     fontWeight: 400,
     fontSize: '16.5px',
     letterSpacing: '.1em',

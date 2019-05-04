@@ -25,7 +25,7 @@ function Contact (props) {
     Label.displayName = 'Label';
 
     const Input = styled('input', {
-        color: '#fff',
+        color: '#666',
         display: 'block',
         borderRadius: '.3rem',
         margin: '0 0 .45rem 0',
@@ -34,6 +34,7 @@ function Contact (props) {
         padding: '.45rem',
         lineHeight: '1.5rem',
         fontSize: '16px',
+        fontFamily: 'Yu Gothic Medium, sans-serif',
         cursor: 'text',
         caretColor: 'black',
         ':focus': {
@@ -52,8 +53,8 @@ function Contact (props) {
         borderRadius: '3px',
         boxShadow: 'none',
         fontSize: '1.3rem',
-        transition: 'all 0.4s ease',
         fontFamily: 'Yu Gothic Medium, sans-serif',
+        transition: 'all 0.4s ease',
         ':hover': {
             backgroundColor: 'rgba(255,255,255,.2)',
             cursor: 'pointer',

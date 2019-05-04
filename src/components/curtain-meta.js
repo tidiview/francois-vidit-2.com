@@ -20,11 +20,14 @@ const Layout = styled('div', {
     },
 });
 Layout.displayName = 'Layout';
+    
+const Anchor = styled('a');
+Anchor.displayName = 'Anchor';
 
 export default ({ data }) => (
     <Layout>
         <DivSvg></DivSvg>
         <Buttons></Buttons>
-        <Arrow></Arrow>
+        <Anchor href="#curtain1"><Arrow></Arrow></Anchor>
     </Layout>
 )
