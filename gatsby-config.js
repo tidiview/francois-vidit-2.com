@@ -3,7 +3,7 @@ const path = require(`path`)
 module.exports = {
   siteMetadata: {
     title: `francois-vidit-2.com`,
-    siteUrl: `https://blissful-murdock-92b8b6.netlify.com`,
+    siteUrl: `https://elated-neumann-29baa1.netlify.com`,
     description: `second version of francois-vidit.com after grav`,
   },
   plugins: [
