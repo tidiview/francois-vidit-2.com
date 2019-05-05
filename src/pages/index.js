@@ -1,45 +1,43 @@
 import React from 'react'
+import { graphql } from 'gatsby'
+import { styled } from 'styletron-react'
+import Img from 'gatsby-image'
+import Header from '../components/header'
+import CurtainMeta from '../components/curtain-meta'
+import CurtainBlog from '../components/curtain-blog'
+import CurtainDocs from '../components/curtain-docs'
+import CurtainProfile from '../components/curtain-profile'
+import CurtainAffectation from '../components/curtain-affectation'
+import CurtainForm from '../components/curtain-form'
 
-import { createStyled } from 'styletron-react'
-import { driver, getInitialStyle } from 'styletron-standard'
+const Layout = styled('div', {
+  height: '100%',
+});
+Layout.displayName = 'Layout';
 
-import THEME from '../theme'
+export default ({ data }) => (
+  <Layout>
+    <Header></Header>
+    <Img style={{ height: '100vh' }} fluid={{ ...data.file.childImageSharp.fluid, sizes:'(max-width: 767px) 98vw, (min-width: 959px) 50vw, 86w' }} alt="" />
+    <CurtainMeta></CurtainMeta>
+    <CurtainBlog></CurtainBlog>
+    <CurtainDocs></CurtainDocs>
+    <CurtainProfile></CurtainProfile>
+    <CurtainAffectation></CurtainAffectation>
+    <CurtainForm></CurtainForm>
+  </Layout>
+)
 
-const { Provider, Consumer } = React.createContext();
-
-const ThemeProvider = ({ children }) => (
-  <Provider value={THEME}>{children}</Provider>
-);
-
-const wrapper = StyledComponent =>
-  function withThemeHOC(props) {
-    return (
-      <Consumer>
-        {theme => <StyledComponent {...props} $theme={theme} />}
-      </Consumer>
-    );
-  };
-
-const styled = createStyled({ wrapper, getInitialStyle, driver });
-
-const FrontImage = styled("div", ({ $theme }) => ({
-  backgroundImage: "url('./landing-curtain-2240.jpg')",
-  /* Full height */
-  height: "100%",
-  /* Center and scale the image nicely */
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover"
-  }));
-FrontImage.displayName = "FrontImage";
-
-function Home() {
-  return (
-    <ThemeProvider>
-      <FrontImage>イメージ
-      </FrontImage>
-    </ThemeProvider>
-  );
-}
-
-export default Home;
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "images/landing-curtain-2240.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(srcSetBreakpoints: [ 280, 380, 480, 640, 700, 840, 1280, 1600 ]) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
