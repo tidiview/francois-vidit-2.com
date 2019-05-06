@@ -28,6 +28,6 @@ export default ({ data }) => (
     <Layout>
         <DivSvg></DivSvg>
         <Buttons></Buttons>
-        <Anchor href="#curtain1"><Arrow></Arrow></Anchor>
+        <Anchor href="#blog"><Arrow></Arrow></Anchor>
     </Layout>
 )

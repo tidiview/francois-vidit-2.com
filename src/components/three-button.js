@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "gatsby"
 import { styled } from 'styletron-react'
 
 const Layout = styled('div', {
@@ -115,6 +116,20 @@ CenterRuby.displayName = 'CenterRuby';
 
 
 
+const SideStyledAnchor = styled(Link, props => {
+    return {
+        textDecoration: 'none',
+    }
+});
+SideStyledAnchor.displayName = 'SideStyledAnchor';
+
+const CenterStyledAnchor = styled('a', {
+    textDecoration: 'none',
+});
+CenterStyledAnchor.displayName = 'CenterStyledAnchor';
+
+
+
 const SideRt = styled('rt', {
     display: 'inline',
     lineHeight: 1,
@@ -154,19 +169,25 @@ CenterRt.displayName = 'CenterRt';
 export default ({ data }) => (
     <Layout>
         <LeftContainer>
-            <SideRuby lang="en">
-                <span title="英語">english</span><SideRt lang="fr">anglais</SideRt>
-            </SideRuby>
+            <SideStyledAnchor to="/en">
+                <SideRuby lang="en">
+                    <span title="英語">english</span><SideRt lang="fr">anglais</SideRt>
+                </SideRuby>
+            </SideStyledAnchor>
         </LeftContainer>
-        <CenterContainer>
-            <CenterRuby lang="ja">
-                <span title="japanese">日本語</span><CenterRt lang="fr">japonais</CenterRt>
-            </CenterRuby>
+        <CenterContainer >
+            <CenterStyledAnchor href="#blog">
+                <CenterRuby lang="ja">
+                    <span title="japanese">日本語</span><CenterRt lang="fr">japonais</CenterRt>
+                </CenterRuby>
+            </CenterStyledAnchor>
         </CenterContainer>
         <RightContainer>
-            <SideRuby lang="fr">
-                <span title="french">français</span><SideRt lang="ja">フランス語</SideRt>
-            </SideRuby>
+            <SideStyledAnchor to="/fr">
+                <SideRuby lang="fr">
+                    <span title="french">français</span><SideRt lang="ja">フランス語</SideRt>
+                </SideRuby>
+            </SideStyledAnchor>
         </RightContainer>
     </Layout>
 )

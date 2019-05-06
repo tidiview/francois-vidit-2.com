@@ -8,6 +8,7 @@ import { Link } from "gatsby"
 
 import THEME from "../theme"
 import LogoHeader from '../components/logo-header-ja'
+import TwitterSquare from '../components/twitter-square'
 
 const { Provider, Consumer } = React.createContext();
 
@@ -31,7 +32,7 @@ const HeaderDiv = styled("header", ({ $theme }) => ({
   position: 'absolute',
   display: 'inline-block',
   width: '100%',
-  zIndex: 10,
+  zIndex: 2,
 }));
 HeaderDiv.displayName = "HeaderDiv";
 
@@ -65,7 +66,7 @@ const SpanLarge = styled("span", ({ $theme }) => ({
 }));
 SpanLarge.displayName = "SpanLarge";
 
-const SpanReduced = styled("span", ({ $theme }) => ({
+const SpanReduced = styled('span', ({ $theme }) => ({
   display: 'none',
   "@media screen and (max-width: 959px) and (min-width: 768px)": {
     display: 'initial',
@@ -77,6 +78,12 @@ const SpanReduced = styled("span", ({ $theme }) => ({
   },
 }));
 SpanReduced.displayName = "SpanReduced";
+
+const StyledTwitterSquare = styled('a', ({ $theme }) => ({
+    width: '16px',
+    height: '16px',
+}));
+StyledTwitterSquare.displayName = "StyledTwitterSquare";
 
 function Home() {
   return (
@@ -107,6 +114,9 @@ function Home() {
                   <LogoHeader />
                 </Link>
                   <Nav>
+                    <StyledTwitterSquare>
+                      <TwitterSquare></TwitterSquare>
+                    </StyledTwitterSquare>
                     <Link to="/profile/" style={{ color: "white", textDecorationLine: "none" }}>
                     <SpanLarge>プロフィール</SpanLarge><SpanReduced>☰</SpanReduced>
                     </Link>

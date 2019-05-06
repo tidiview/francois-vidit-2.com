@@ -47,7 +47,7 @@ const Text2 = styled('p', {
 Text2.displayName = 'Text2';
 
 export default () => (
-  <Layout id="curtain1">
+  <Layout id="blog">
     <StyledMarkFooter></StyledMarkFooter>
     <Text1>とは、</Text1>
     <Link to="/blog">
