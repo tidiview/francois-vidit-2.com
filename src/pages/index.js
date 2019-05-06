@@ -9,6 +9,7 @@ import CurtainDocs from '../components/curtain-docs'
 import CurtainProfile from '../components/curtain-profile'
 import CurtainAffectation from '../components/curtain-affectation'
 import CurtainForm from '../components/curtain-form'
+import Footer from '../components/footer'
 
 const Layout = styled('div', {
   height: '100%',
@@ -16,15 +17,16 @@ const Layout = styled('div', {
 Layout.displayName = 'Layout';
 
 export default ({ data }) => (
-  <Layout>
+  <Layout id="top">
     <Header></Header>
-    <Img style={{ height: '100vh' }} fluid={{ ...data.file.childImageSharp.fluid, sizes:'(max-width: 767px) 98vw, (min-width: 959px) 50vw, 86w' }} alt="" />
+    <section><Img style={{ height: '100vh' }} fluid={{ ...data.file.childImageSharp.fluid, sizes:'(max-width: 767px) 98vw, (min-width: 959px) 50vw, 86w' }} alt="" /></section>
     <CurtainMeta></CurtainMeta>
     <CurtainBlog></CurtainBlog>
     <CurtainDocs></CurtainDocs>
     <CurtainProfile></CurtainProfile>
     <CurtainAffectation></CurtainAffectation>
     <CurtainForm></CurtainForm>
+    <Footer></Footer>
   </Layout>
 )
 

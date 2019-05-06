@@ -4,13 +4,20 @@ import { styled } from 'styletron-react'
 import MarkFooter from '../components/svg-blog-section-mark-footer'
 import BlogJa from '../components/svg-blog-section-blog-ja'
 
-const Layout = styled('div', {
+const Layout = styled('section', {
   width: '100%',
   padding: '6vh 0 2.1vh 0',
   textAlign: 'center',
   backgroundColor: '#000',
 });
 Layout.displayName = 'Layout';
+
+const StyledMarkFooter = styled(MarkFooter, props => {
+  return {
+      style: 'max-height: 6vh;max-width: 85vw;padding-top: 1vh;padding-bottom: 1vh;margin: 1vh auto 0;box-sizing: border-box;',
+  }
+});
+StyledMarkFooter.displayName = 'StyledMarkFooter';
 
 const Text1 = styled('p', {
   minWidth: '15vw',
@@ -41,7 +48,7 @@ Text2.displayName = 'Text2';
 
 export default () => (
   <Layout id="curtain1">
-    <MarkFooter></MarkFooter>
+    <StyledMarkFooter></StyledMarkFooter>
     <Text1>とは、</Text1>
     <Link to="/blog">
       <Text2></Text2>

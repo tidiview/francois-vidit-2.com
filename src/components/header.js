@@ -26,7 +26,7 @@ const wrapper = StyledComponent =>
 
 const styled = createStyled({ wrapper, getInitialStyle, driver });
 
-const HeaderDiv = styled("div", ({ $theme }) => ({
+const HeaderDiv = styled("header", ({ $theme }) => ({
   backgroundColor: 'rgba(255,255,255,0)',
   position: 'absolute',
   display: 'inline-block',

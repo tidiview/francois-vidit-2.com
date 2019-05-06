@@ -2,8 +2,8 @@ import React from 'react'
 import { styled } from 'styletron-react'
 import Contact from '../components/contact'
 
-const Layout = styled('div', {
-    padding: '5vh .938rem 10vh',
+const Layout = styled('section', {
+    padding: '5vh .938rem 20rem',
     backgroundColor: '#666',
 });
 Layout.displayName = 'Layout';

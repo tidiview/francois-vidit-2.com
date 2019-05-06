@@ -4,7 +4,7 @@ import DivSvg from '../components/landing-curtain-photo-svg'
 import Buttons from '../components/three-button'
 import Arrow from '../components/landing-curtain-arrow-svg'
 
-const Layout = styled('div', {
+const Layout = styled('section', {
     margin: '.85rem 0 0 0',
     left: '30%',
     right: '30%',

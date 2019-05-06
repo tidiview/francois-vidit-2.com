@@ -8,7 +8,7 @@ Layout.displayName = 'Layout';
 
 
 
-const LeftContainer = styled('div', {
+const LeftContainer = styled('button', {
     display: 'inline-block',
     border: '1px solid rgba(255,255,255,.75)',
     borderRadius: '3px',
@@ -29,7 +29,7 @@ const LeftContainer = styled('div', {
 });
 LeftContainer.displayName = 'LeftContainer';
 
-const CenterContainer = styled('div', {
+const CenterContainer = styled('button', {
     display: 'inline-block',
     border: '1px solid rgba(255,255,255,.75)',
     borderRadius: '3px',
@@ -50,7 +50,7 @@ const CenterContainer = styled('div', {
 });
 CenterContainer.displayName = 'CenterContainer';
 
-const RightContainer = styled('div', {
+const RightContainer = styled('button', {
     display: 'inline-block',
     border: '1px solid rgba(255,255,255,.75)',
     borderRadius: '3px',
@@ -77,7 +77,7 @@ const SideRuby = styled('ruby', {
     display: 'inline-flex',
     flexDirection: 'column-reverse',
     color: 'rgba(255,255,255,.9)',
-    fontFamily: 'Meiryo',
+    fontFamily: 'Meiryo, sans-serif',
     fontSize: '22px',
     fontWeight: 400,
     fontStyle: 'normal',
@@ -97,7 +97,7 @@ const CenterRuby = styled('ruby', {
     display: 'inline-flex',
     flexDirection: 'column-reverse',
     color: 'rgba(255,255,255,.9)',
-    fontFamily: 'Meiryo',
+    fontFamily: 'Meiryo, sans-serif',
     fontSize: '33px',
     fontWeight: 400,
     fontStyle: 'normal',

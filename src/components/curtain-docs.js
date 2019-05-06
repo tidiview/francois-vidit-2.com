@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { styled } from 'styletron-react'
 import DocsJa from '../components/svg-docs-section-docs-ja'
 
-const Layout = styled('div', {
+const Layout = styled('section', {
     width: '100%',
     padding: '1.5vh 0 2.1vh 0',
     textAlign: 'center',

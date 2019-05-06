@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from 'styletron-react'
 
-const Layout = styled('div', {
+const Layout = styled('section', {
     padding: '5vh .938rem 10vh',
     backgroundColor: '#8282c9',
 });

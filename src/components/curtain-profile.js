@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { styled } from 'styletron-react'
 import ProfileJa from '../components/svg-profile-section-profile-ja'
 
-const Layout = styled('div', {
+const Layout = styled('section', {
     width: '100%',
     padding: '1.5vh 0 2.1vh 0',
     textAlign: 'center',
