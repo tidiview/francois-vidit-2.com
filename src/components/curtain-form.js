@@ -5,6 +5,12 @@ import Contact from '../components/contact'
 const Layout = styled('section', {
     padding: '5vh .938rem 20rem',
     backgroundColor: '#666',
+    "@media screen and (max-width: 959px) and (min-width: 768px)": {
+      paddingBottom: '17rem',
+    },
+    '@media screen and (max-width: 767px)': {
+      paddingBottom: '14rem',
+    },
 });
 Layout.displayName = 'Layout';
 
