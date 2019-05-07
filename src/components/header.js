@@ -9,6 +9,7 @@ import { Link } from "gatsby"
 import THEME from "../theme"
 import LogoHeader from '../components/logo-header-ja'
 import TwitterSquare from '../components/twitter-square'
+import ButtonNav from '../components/button-nav'
 
 const { Provider, Consumer } = React.createContext();
 
@@ -28,35 +29,34 @@ const wrapper = StyledComponent =>
 const styled = createStyled({ wrapper, getInitialStyle, driver });
 
 const HeaderDiv = styled("header", ({ $theme }) => ({
-  backgroundColor: 'rgba(255,255,255,0)',
   position: 'absolute',
   display: 'inline-block',
   width: '100%',
   zIndex: 2,
+  backgroundColor: 'rgba(255,255,255,0)',
 }));
 HeaderDiv.displayName = "HeaderDiv";
 
 const Nav = styled("nav", ({ $theme }) => ({
   position: 'absolute',
-  top: '50%',
+  top: 0,
   right: 0,
+  paddingTop: '1em',
   paddingRight: '15rem',
   "@media screen and (max-width: 959px) and (min-width: 768px)": {
-    top: 0,
-    paddingRight: '5rem',
     paddingTop: '.8rem',
+    paddingRight: '5rem',
   },
   "@media screen and (max-width: 767px)": {
-    top: 0,
-    paddingRight: '.5rem',
     paddingTop: '.8rem',
+    paddingRight: '.5rem',
   },
 }));
 Nav.displayName = "Nav";
 
 const SpanLarge = styled("span", ({ $theme }) => ({
   display: 'initial',
-  fontFamily: 'Yu Gothic Medium, sans-serif',
+  fontFamily: THEME.fontFamily[0],
   "@media screen and (max-width: 959px) and (min-width: 768px)": {
     display: 'none',
   },
@@ -65,19 +65,6 @@ const SpanLarge = styled("span", ({ $theme }) => ({
   },
 }));
 SpanLarge.displayName = "SpanLarge";
-
-const SpanReduced = styled('span', ({ $theme }) => ({
-  display: 'none',
-  "@media screen and (max-width: 959px) and (min-width: 768px)": {
-    display: 'initial',
-    fontSize: '32px',
-  },
-  "@media screen and (max-width: 767px)": {
-    display: 'initial',
-    fontSize: '32px',
-  },
-}));
-SpanReduced.displayName = "SpanReduced";
 
 const StyledTwitterSquare = styled('a', ({ $theme }) => ({
     width: '16px',
@@ -114,12 +101,14 @@ function Home() {
                   <LogoHeader />
                 </Link>
                   <Nav>
-                    <StyledTwitterSquare>
-                      <TwitterSquare></TwitterSquare>
-                    </StyledTwitterSquare>
+                    <SpanLarge>
+                      <StyledTwitterSquare>
+                        <TwitterSquare></TwitterSquare>
+                      </StyledTwitterSquare>
+                      </SpanLarge>
                     <Link to="/profile/" style={{ color: "white", textDecorationLine: "none" }}>
-                    <SpanLarge>プロフィール</SpanLarge><SpanReduced>☰</SpanReduced>
-                    </Link>
+                    <SpanLarge>プロフィール</SpanLarge></Link>
+                    <ButtonNav></ButtonNav>
                   </Nav>
               </HeaderDiv>
               </ThemeProvider>

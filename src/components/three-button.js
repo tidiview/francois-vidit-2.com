@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
 import { styled } from 'styletron-react'
+import THEME from "../theme"
 
 const Layout = styled('div', {
     margin: '.85rem 0 1.7rem 0',
@@ -78,7 +79,7 @@ const SideRuby = styled('ruby', {
     display: 'inline-flex',
     flexDirection: 'column-reverse',
     color: 'rgba(255,255,255,.9)',
-    fontFamily: 'Meiryo, sans-serif',
+    fontFamily: THEME.fontFamily[1],
     fontSize: '22px',
     fontWeight: 400,
     fontStyle: 'normal',
@@ -98,7 +99,7 @@ const CenterRuby = styled('ruby', {
     display: 'inline-flex',
     flexDirection: 'column-reverse',
     color: 'rgba(255,255,255,.9)',
-    fontFamily: 'Meiryo, sans-serif',
+    fontFamily: THEME.fontFamily[1],
     fontSize: '33px',
     fontWeight: 400,
     fontStyle: 'normal',

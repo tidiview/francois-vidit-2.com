@@ -11,7 +11,7 @@ const Layout = styled('section', {
     backgroundColor: 'rgba(255, 255, 255, 0)',
     position: 'absolute',
     bottom: '80px',
-    zIndex: 11,
+    zIndex: 1,
     textAlign: 'center',
     "@media screen and (max-width: 767px)": {
         left: '4px',

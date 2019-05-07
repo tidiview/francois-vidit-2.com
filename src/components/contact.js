@@ -1,5 +1,6 @@
 import React from 'react'
 import { styled } from 'styletron-react'
+import THEME from "../theme"
 
 function Contact (props) {
 
@@ -34,7 +35,7 @@ function Contact (props) {
         padding: '.45rem',
         lineHeight: '1.5rem',
         fontSize: '16px',
-        fontFamily: 'Yu Gothic Medium, sans-serif',
+        fontFamily: THEME.fontFamily[0],
         cursor: 'text',
         caretColor: 'black',
         ':focus': {
@@ -53,7 +54,7 @@ function Contact (props) {
         borderRadius: '3px',
         boxShadow: 'none',
         fontSize: '1.3rem',
-        fontFamily: 'Yu Gothic Medium, sans-serif',
+        fontFamily: THEME.fontFamily[0],
         transition: 'all 0.4s ease',
         ':hover': {
             backgroundColor: 'rgba(255,255,255,.2)',
