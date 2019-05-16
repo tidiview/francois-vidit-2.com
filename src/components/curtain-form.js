@@ -3,7 +3,7 @@ import { styled } from 'styletron-react'
 import Contact from '../components/contact'
 
 const Layout = styled('section', {
-    padding: '5vh .938rem 20rem',
+    padding: '5vh 4px 20rem',
     backgroundColor: '#666',
     "@media screen and (max-width: 959px) and (min-width: 768px)": {
       paddingBottom: '17rem',
