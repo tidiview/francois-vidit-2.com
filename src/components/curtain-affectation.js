@@ -2,7 +2,7 @@ import React from 'react'
 import { styled } from 'styletron-react'
 
 const Layout = styled('section', {
-    padding: '5vh .938rem 10vh',
+    padding: '5vh 4px 10vh',
     backgroundColor: '#8282c9',
 });
 Layout.displayName = 'Layout';
