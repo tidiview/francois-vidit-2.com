@@ -4,7 +4,7 @@ import DivSvg from '../components/landing-curtain-photo-svg'
 import Buttons from '../components/three-button'
 import Arrow from '../components/landing-curtain-arrow-svg'
 
-const Layout = styled('section', {
+const Layout = styled('div', {
     margin: '.85rem 0 0 0',
     left: '30%',
     right: '30%',
@@ -28,6 +28,8 @@ export default ({ data }) => (
     <Layout>
         <DivSvg></DivSvg>
         <Buttons></Buttons>
-        <Anchor href="#blog"><Arrow></Arrow></Anchor>
+        <Anchor href="#blog">
+            <Arrow></Arrow>
+        </Anchor>
     </Layout>
 )

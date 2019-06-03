@@ -1,9 +1,7 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import { styled } from 'styletron-react'
-import Img from 'gatsby-image'
 import Header from '../components/header'
-import CurtainMeta from '../components/curtain-meta'
+import CurtainLanding from '../components/curtain-landing'
 import CurtainBlog from '../components/curtain-blog'
 import CurtainDocs from '../components/curtain-docs'
 import CurtainProfile from '../components/curtain-profile'
@@ -16,11 +14,10 @@ const Layout = styled('div', {
 });
 Layout.displayName = 'Layout';
 
-export default ({ data }) => (
+export default () => (
   <Layout id="top">
     <Header></Header>
-    <section><Img style={{ height: '100vh' }} fluid={{ ...data.file.childImageSharp.fluid, sizes:'(max-width: 767px) 98vw, (min-width: 959px) 50vw, 86w' }} alt="" /></section>
-    <CurtainMeta></CurtainMeta>
+    <CurtainLanding></CurtainLanding>
     <CurtainBlog></CurtainBlog>
     <CurtainDocs></CurtainDocs>
     <CurtainProfile></CurtainProfile>
@@ -29,17 +26,3 @@ export default ({ data }) => (
     <Footer></Footer>
   </Layout>
 )
-
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "images/landing-curtain-2240.jpg" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(srcSetBreakpoints: [ 280, 380, 480, 640, 700, 840, 1280, 1600 ]) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
