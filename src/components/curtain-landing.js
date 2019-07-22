@@ -1,18 +1,26 @@
 import React from 'react'
-import { styled } from 'styletron-react'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import CurtainMeta from '../components/curtain-meta'
 
-const CurtainImg = styled('div', {
-  height: '100vh', 
-  backgroundPosition: 'left',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  backgroundImage: 'url("./landing-curtain-1600.jpg")',
-});
-CurtainImg.displayName = 'CurtainImg';
-
 export default () => (
-    <CurtainImg>
-        <CurtainMeta></CurtainMeta>
-    </CurtainImg>
+  <>
+    <StaticQuery
+      query={graphql`
+        query ImageQuery {
+          file(relativePath: { eq: "images/landing-curtain-2240.jpg" }) {
+            childImageSharp {
+              fluid(maxWidth: 1600) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <Img style={{ height:'100vh' }} imgStyle={{ objectPosition:'left' }} fluid={data.file.childImageSharp.fluid} />
+      )}
+    />
+    <CurtainMeta></CurtainMeta>
+  </>
 )

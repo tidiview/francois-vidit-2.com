@@ -4,7 +4,13 @@ module.exports = {
   siteMetadata: {
     title: `francois-vidit-2.com`,
     siteUrl: `https://elated-neumann-29baa1.netlify.com`,
-    description: `second version of francois-vidit.com after grav`,
+    description: `2nd version of francois-vidit.com after grav`,
+    headline: ``,
+    image: ``,
+    video: ``,
+    twitter: ``,
+    name: ``,
+    logo: ``,
   },
   plugins: [
     {
@@ -12,6 +18,13 @@ module.exports = {
       options: {
         name: `src`,
         path: path.join(__dirname, `src`)
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `/src/images/`)
       }
     },
     {
@@ -24,6 +37,15 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-styletron`,
+      options: {
+        // You can pass options to Styletron.
+        // prefix: "_",
+        //  Disable dev debug mode, enabled by default
+        debug: false,
+      },
+    },
     `gatsby-plugin-svgr`,
     {
       resolve: `gatsby-plugin-netlify`,
