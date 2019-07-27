@@ -21,6 +21,13 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-i18n',
+      options: {        
+        langKeyDefault: 'fr',
+        useLangKeyLayout: true
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

@@ -11,7 +11,7 @@ export default () => (
           file(relativePath: { eq: "images/landing-curtain-2240.jpg" }) {
             childImageSharp {
               fluid(maxWidth: 1600) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
