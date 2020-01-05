@@ -28,7 +28,7 @@ export default ({ data }) => (
     <Layout>
         <DivSvg></DivSvg>
         <Buttons></Buttons>
-        <Anchor href="#blog">
+        <Anchor href='#blog'>
             <Arrow></Arrow>
         </Anchor>
     </Layout>
