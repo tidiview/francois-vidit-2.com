@@ -1,14 +1,24 @@
 import React from 'react'
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
 import { styled } from 'styletron-react'
 import MarkFooter from '../components/svg-blog-section-mark-footer'
 import BlogJa from '../components/svg-blog-section-blog-ja'
 
 const Layout = styled('section', {
-  width: '100%',
-  padding: '6vh 0 2.1vh 0',
+  paddingTop: '6vh',
+  paddingRight: '0.8rem',
+  paddingBottom: '2.1vh',
+  paddingLeft: '0.8rem',
   textAlign: 'center',
   backgroundColor: '#000',
+  '@media screen and (max-width: 959px) and (min-width: 768px)': {
+    paddingRight: '10px',
+    paddingLeft: '10px', 
+  },
+  '@media screen and (max-width: 767px)': {
+    paddingRight: '6px',
+    paddingLeft: '6px',
+  }
 });
 Layout.displayName = 'Layout';
 
@@ -30,6 +40,12 @@ const Text1 = styled('p', {
   fontFamily: 'Yu Gothic Medium, sans-serif',
   fontSize: '4vh',
   color: '#e7e7e8',
+  '@media screen and (max-width: 959px) and (min-width: 768px)': {
+    fontSize: '3.3vh',
+  },
+  '@media screen and (max-width: 767px)': {
+    fontSize: '2.8vh',
+  }
 });
 Text1.displayName = 'Text1';
 
@@ -43,17 +59,27 @@ const Text2 = styled('p', {
   border: 'none',
   borderRadius: '50%',
   backgroundColor: 'crimson',
+  '@media screen and (max-width: 959px) and (min-width: 768px)': {
+    marginTop: '6.3vh',
+    maxWidth: '6.2vh',
+    height: '6.2vh',
+  },
+  '@media screen and (max-width: 767px)': {
+    marginTop: '6vh',
+    maxWidth: '5.5vh',
+    height: '5.5vh',
+  }
 });
 Text2.displayName = 'Text2';
 
 export default () => (
-  <Layout id="blog">
+  <Layout id='blog'>
     <StyledMarkFooter></StyledMarkFooter>
     <Text1>とは、</Text1>
-    <Link to="/blog">
+    <Link to='/blog'>
       <Text2></Text2>
     </Link>
-    <Link to="/blog">
+    <Link to='/blog'>
       <BlogJa></BlogJa>
     </Link>
   </Layout>

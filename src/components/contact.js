@@ -1,6 +1,6 @@
 import React from 'react'
 import { styled } from 'styletron-react'
-import THEME from "../theme"
+import THEME from '../theme'
 
 function Contact (props) {
 
@@ -14,7 +14,7 @@ function Contact (props) {
         display: 'block',
         marginBottom: '.45rem',
         '::after': {
-            content: '"*"',
+            content: ''*'',
             color: 'crimson',
             paddingLeft: '3px',
             verticalAlign: 'sup',
@@ -48,7 +48,7 @@ function Contact (props) {
         color: '#fff',
         padding: '.7rem 2rem',
         marginTop: '2rem',
-        marginRight: props.$right ? "0.45rem" : "0",
+        marginRight: props.$right ? '0.45rem' : '0',
         backgroundColor: 'rgba(255,255,255,0)',
         border: '1px solid #fff',
         borderRadius: '3px',
@@ -64,20 +64,20 @@ function Contact (props) {
     Button.displayName = 'Button';
 
     return (
-        <Form name="contact" method="post" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
+        <Form name='contact' method='post' action='/success' data-netlify='true' data-netlify-honeypot='bot-field'>
 
-            <Input type="hidden" name="bot-field" />
+            <Input type='hidden' name='bot-field' />
 
-            <Label htmlFor="name">名前</Label>
-            <Input type="text" name="name" id="name" title="お名前をここでご記入下さい …" placeholder="お名前を …" required />
+            <Label htmlFor='name'>名前</Label>
+            <Input type='text' name='name' id='name' title='お名前をここでご記入下さい …' placeholder='お名前を …' required />
 
-            <Label htmlFor="email">メールアドレス</Label>
-            <Input type="text" name="email" id="email" title="メールアドレスをここでご記入下さい …" placeholder="メールアドレスを …" required/>
+            <Label htmlFor='email'>メールアドレス</Label>
+            <Input type='text' name='email' id='email' title='メールアドレスをここでご記入下さい …' placeholder='メールアドレスを …' required/>
 
-            <Label htmlFor="message">伝言</Label>
-            <Input $as="textarea" name="message" id="message" rows="3" title="ご作文をここでご記入下さい …" placeholder="ご作文を …" required></Input>
-            <Button $right type="submit" value="伝言を送信">伝言を送信</Button>
-            <Button type="reset" value="取り消し">取り消し</Button>
+            <Label htmlFor='message'>伝言</Label>
+            <Input $as='textarea' name='message' id='message' rows='3' title='ご作文をここでご記入下さい …' placeholder='ご作文を …' required></Input>
+            <Button $right type='submit' value='伝言を送信'>伝言を送信</Button>
+            <Button type='reset' value='取り消し'>取り消し</Button>
         
         </Form>
     )

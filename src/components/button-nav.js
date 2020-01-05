@@ -31,10 +31,10 @@ class MyApp extends React.Component {
                 cursor: 'pointer',
                 transition: 'all 0.4s ease',
             },
-            "@media screen and (max-width: 959px) and (min-width: 768px)": {
+            '@media screen and (max-width: 959px) and (min-width: 768px)': {
                 display: props.$isActive ? 'none' : 'initial',
             },
-            "@media screen and (max-width: 767px)": {
+            '@media screen and (max-width: 767px)': {
                 display: props.$isActive ? 'none' : 'initial',
             },
         }));
@@ -59,10 +59,10 @@ class MyApp extends React.Component {
                 cursor: 'pointer',
                 transition: 'all 0.4s ease',
             },
-            "@media screen and (max-width: 959px) and (min-width: 768px)": {
+            '@media screen and (max-width: 959px) and (min-width: 768px)': {
                 right: '5rem'
             },
-            "@media screen and (max-width: 767px)": {
+            '@media screen and (max-width: 767px)': {
                 right: '.5rem'
             },
         }));

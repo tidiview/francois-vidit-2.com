@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
 import { styled } from 'styletron-react'
-import THEME from "../theme"
+import THEME from '../theme'
 
 const Layout = styled('div', {
     margin: '.85rem 0 1.7rem 0',
@@ -18,13 +18,13 @@ const LeftContainer = styled('button', {
     padding: '10px 8px 3px 8px',
     backgroundColor: 'rgba(0,0,0,.15)',
     transition: 'all 0.4s ease',
-    "@media screen and (max-width: 959px) and (min-width: 768px)": {
+    '@media screen and (max-width: 959px) and (min-width: 768px)': {
         paddingTop: '5px',
     },
-    "@media screen and (max-width: 767px)": {
+    '@media screen and (max-width: 767px)': {
         paddingTop: '4px',
     },
-    ":hover": {
+    ':hover': {
         backgroundColor: 'rgba(255,255,255,.25)',
         cursor: 'pointer',
     },
@@ -42,18 +42,18 @@ const CenterContainer = styled('button', {
     padding: '12px 12px 3px 12px',
     backgroundColor: 'rgba(0,0,0,.2)',
     transition: 'all 0.4s ease',
-    "@media screen and (max-width: 959px) and (min-width: 768px)": {
+    '@media screen and (max-width: 959px) and (min-width: 768px)': {
         paddingTop: '8px',
         marginRight: '6px',
         marginLeft: '6px',
     },
-    "@media screen and (max-width: 767px)": {
+    '@media screen and (max-width: 767px)': {
         paddingTop: '6px',
         borderRadius: '3px',
         marginRight: '3px',
         marginLeft: '3px',
     },
-    ":hover": {
+    ':hover': {
         backgroundColor: 'rgba(255,255,255,.25)',
         cursor: 'pointer',
     },
@@ -68,13 +68,13 @@ const RightContainer = styled('button', {
     padding: '10px 8px 3px 8px',
     backgroundColor: 'rgba(0,0,0,.2)',
     transition: 'all 0.4s ease',
-    "@media screen and (max-width: 959px) and (min-width: 768px)": {
+    '@media screen and (max-width: 959px) and (min-width: 768px)': {
         paddingTop: '5px',
     },
-    "@media screen and (max-width: 767px)": {
+    '@media screen and (max-width: 767px)': {
         paddingTop: '4px',
     },
-    ":hover": {
+    ':hover': {
         backgroundColor: 'rgba(255,255,255,.25)',
         cursor: 'pointer',
     },
@@ -92,11 +92,11 @@ const SideRuby = styled('ruby', {
     fontWeight: 400,
     fontStyle: 'normal',
     letterSpacing: '.1em',
-    "@media screen and (max-width: 959px) and (min-width: 768px)": {
+    '@media screen and (max-width: 959px) and (min-width: 768px)': {
         fontSize: '16px',
         letterSpacing: '.02em',
     },
-    "@media screen and (max-width: 767px)": {
+    '@media screen and (max-width: 767px)': {
         fontSize: '14px',
         letterSpacing: '.03em',
     },
@@ -112,11 +112,11 @@ const CenterRuby = styled('ruby', {
     fontWeight: 400,
     fontStyle: 'normal',
     letterSpacing: '.1em',
-    "@media screen and (max-width: 959px) and (min-width: 768px)": {
+    '@media screen and (max-width: 959px) and (min-width: 768px)': {
         fontSize: '20px',
         letterSpacing: '.02em',
     },
-    "@media screen and (max-width: 767px)": {
+    '@media screen and (max-width: 767px)': {
         fontSize: '18px', 
         letterSpacing: '.03em',       
     },
@@ -145,11 +145,11 @@ const SideRt = styled('rt', {
     fontWeight: 400,
     fontSize: '13.5px',
     letterSpacing: '.1em',
-    "@media screen and (max-width: 959px) and (min-width: 768px)": {
+    '@media screen and (max-width: 959px) and (min-width: 768px)': {
         fontSize: '12px',
         letterSpacing: '.02em',
     },
-    "@media screen and (max-width: 767px)": {
+    '@media screen and (max-width: 767px)': {
         fontSize: '11px', 
         letterSpacing: '.03em',       
     },
@@ -163,11 +163,11 @@ const CenterRt = styled('rt', {
     fontWeight: 400,
     fontSize: '16.5px',
     letterSpacing: '.1em',
-    "@media screen and (max-width: 959px) and (min-width: 768px)": {
+    '@media screen and (max-width: 959px) and (min-width: 768px)': {
         fontSize: '15px',
         letterSpacing: '.02em',
     },
-    "@media screen and (max-width: 767px)": {
+    '@media screen and (max-width: 767px)': {
         fontSize: '13px', 
         letterSpacing: '.03em',       
     },
@@ -178,23 +178,23 @@ CenterRt.displayName = 'CenterRt';
 export default ({ data }) => (
     <Layout>
         <LeftContainer>
-            <SideStyledAnchor to="/en">
-                <SideRuby lang="en">
-                    <span title="英語">english</span><SideRt lang="fr">anglais</SideRt>
+            <SideStyledAnchor to='/en'>
+                <SideRuby lang='en'>
+                    <span title='英語'>english</span><SideRt lang='fr'>anglais</SideRt>
                 </SideRuby>
             </SideStyledAnchor>
         </LeftContainer>
         <CenterContainer >
-            <CenterStyledAnchor href="#blog">
-                <CenterRuby lang="ja">
-                    <span title="japanese">日本語</span><CenterRt lang="fr">japonais</CenterRt>
+            <CenterStyledAnchor href='#blog'>
+                <CenterRuby lang='ja'>
+                    <span title='japanese'>日本語</span><CenterRt lang='fr'>japonais</CenterRt>
                 </CenterRuby>
             </CenterStyledAnchor>
         </CenterContainer>
         <RightContainer>
-            <SideStyledAnchor to="/fr">
-                <SideRuby lang="fr">
-                    <span title="french">français</span><SideRt lang="ja">フランス語</SideRt>
+            <SideStyledAnchor to='/fr'>
+                <SideRuby lang='fr'>
+                    <span title='french'>français</span><SideRt lang='ja'>フランス語</SideRt>
                 </SideRuby>
             </SideStyledAnchor>
         </RightContainer>

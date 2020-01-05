@@ -9,7 +9,7 @@ const Success = props => (
   <Layout>
     <Helmet>
         <title>Success Page</title>
-        <meta name="description" content="Success Page" />
+        <meta name='description' content='Success Page' />
     </Helmet>
     <div>
         <h1>Success/Thank You Page</h1>

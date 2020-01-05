@@ -3,29 +3,23 @@ import { styled } from 'styletron-react'
 import Contact from '../components/contact'
 
 const Layout = styled('section', {
-    padding: '5vh 4px 20rem',
+    paddingTop: '5vh',
+    paddingRight: '0.8rem',
+    paddingBottom: '20rem',
+    paddingLeft: '0.8rem',
     backgroundColor: '#666',
-    "@media screen and (max-width: 959px) and (min-width: 768px)": {
+    '@media screen and (max-width: 959px) and (min-width: 768px)': {
       paddingBottom: '17rem',
+      paddingRight: '10px',
+      paddingLeft: '10px', 
     },
     '@media screen and (max-width: 767px)': {
       paddingBottom: '14rem',
+      paddingRight: '6px',
+      paddingLeft: '6px', 
     },
 });
 Layout.displayName = 'Layout';
-
-const Text1 = styled('p', {
-  maxWidth: '7vh',
-  height: '7vh',
-  lineHeight: '6.75vh',
-  margin: '6vh auto 0',
-  fontSize: '4vh',
-  textAlign: 'center',
-  border: 'none',
-  borderRadius: '50%',
-  backgroundColor: 'crimson',
-});
-Text1.displayName = 'Text1';
 
 const H4 = styled('h4', {
     fontSize: '1.25rem',
@@ -44,8 +38,7 @@ const Text2 = styled('p', {
 Text2.displayName = 'Text2';
 
 export default () => (
-  <Layout>
-      <Text1></Text1>
+  <Layout id='contact'>
       <H4>お問い合わせ</H4>
       <Text2>問い合わせるには、以下のフォームをご記入を：</Text2>
       <Contact></Contact>

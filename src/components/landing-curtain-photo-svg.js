@@ -7,11 +7,11 @@ const DIVSVG = styled('div', {
     display: 'inline-block',
     height: '180px',
     width: '180px',
-    "@media screen and (max-width: 959px) and (min-width: 768px)": {
+    '@media screen and (max-width: 959px) and (min-width: 768px)': {
         height: '130px',
         width: '130px',
     },
-    "@media screen and (max-width: 767px)": {
+    '@media screen and (max-width: 767px)': {
         height: '100px',
         width: '25vw',
         left: '4px',
@@ -31,11 +31,11 @@ const H1svg = styled('div', {
     display: 'inline-block',
     width: '414px',
     height: '180px',
-    "@media screen and (max-width: 959px) and (min-width: 768px)": {
+    '@media screen and (max-width: 959px) and (min-width: 768px)': {
         height: '299px',
         width: '35vw',
     },
-    "@media screen and (max-width: 767px)": {
+    '@media screen and (max-width: 767px)': {
         height: '230px',
         width: '50vw',
     }
@@ -50,7 +50,7 @@ const App = () => (
         <DIVSVG>
             <Star />
         </DIVSVG>
-        <H1 title="☆ ようこそ、私のホームページーに！">
+        <H1 title='☆ ようこそ、私のホームページーに！'>
             <H1svg>
                 <Star2 />
             </H1svg>
