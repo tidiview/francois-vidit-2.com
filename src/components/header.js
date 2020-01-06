@@ -174,7 +174,7 @@ function Home() {
                     </StyleAnchor1>
                     <StyleAnchor1 href='https://github.com/tidiview/francois-vidit.com'>
                       <SpanLarge>
-                          <Github></Github>
+                        <Github></Github>
                       </SpanLarge>
                     </StyleAnchor1>
                     <ButtonNav></ButtonNav>
