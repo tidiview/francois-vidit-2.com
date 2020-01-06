@@ -103,7 +103,11 @@ class MyApp extends React.Component {
             paddingLeft: '5%',
             ':hover': {
                 backgroundColor: '#818181',
-                color: 'rgba(0,0,0, 1)',
+                color: '#fff',
+            },
+            '#home:target': {
+                backgroundColor: '#ccc',
+                color: '#818181',
             },
             '@media screen and (max-width: 959px) and (min-width: 768px)': {
                 width: '60%',
@@ -144,53 +148,38 @@ class MyApp extends React.Component {
                     </OverlayClose>
                     <OverlayContent
                         $isActive={isActive}>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>about</OverlayUnit>
+                        <OverlayAnchor id='home' href='/#home'>
+                            <OverlayUnit>ホ－ム</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>services</OverlayUnit>
+                        <OverlayAnchor href='/c-u'>
+                            <OverlayUnit>使用条件</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>clients</OverlayUnit>
+                        <OverlayAnchor href='/crypto'>
+                            <OverlayUnit>公開鍵</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>contact</OverlayUnit>
+                        <OverlayAnchor href='/blog'>
+                            <OverlayUnit>ブログ</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>about</OverlayUnit>
+                        <OverlayAnchor href='/docs'>
+                            <OverlayUnit>ドックス</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>services</OverlayUnit>
+                        <OverlayAnchor href='/profile'>
+                            <OverlayUnit>プロフィール</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>clients</OverlayUnit>
+                        <OverlayAnchor href='https://twitter.com/@bf7afa37fa94ja'>
+                            <OverlayUnit>twitter</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>contact</OverlayUnit>
+                        <OverlayAnchor href='https://github.com/tidiview/francois-vidit.com'>
+                            <OverlayUnit>github</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>about</OverlayUnit>
+                        <OverlayAnchor href='/ja'>
+                            <OverlayUnit>日本語</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>services</OverlayUnit>
+                        <OverlayAnchor href='/fr'>
+                            <OverlayUnit>français</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>clients</OverlayUnit>
-                        </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>contact</OverlayUnit>
-                        </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>about</OverlayUnit>
-                        </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>services</OverlayUnit>
-                        </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>clients</OverlayUnit>
-                        </OverlayAnchor>
-                        <OverlayAnchor href='#'>
-                            <OverlayUnit>contact</OverlayUnit>
+                        <OverlayAnchor href='/en'>
+                            <OverlayUnit>english</OverlayUnit>
                         </OverlayAnchor>
                     </OverlayContent>
                 </OverlayDiv>

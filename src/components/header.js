@@ -148,7 +148,7 @@ function Home() {
                 <html lang='ja' />
               </Helmet>
               <HeaderDiv>
-                <Link to='/'>
+                <Link id='#home' to='/'>
                   <LogoHeader />
                 </Link>
                   <Nav>
