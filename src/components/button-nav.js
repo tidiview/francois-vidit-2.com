@@ -97,7 +97,7 @@ class MyApp extends React.Component {
             marginLeft: 'auto',
             marginRight: 'auto',
             color: props.$highlight ? '#000' : '#818181',
-            backgroundColor: props.$highlight ? '#ccc' : 'inherit',
+            backgroundColor: props.$highlight ? '#d9d9d9' : 'inherit',
             fontSize: '36px',
             fontFamily: THEME.fontFamily[0],
             paddingLeft: '5%',
@@ -171,8 +171,11 @@ class MyApp extends React.Component {
                         <OverlayAnchor href='https://github.com/tidiview/francois-vidit.com'>
                             <OverlayUnit>github</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='/ja'>
-                            <OverlayUnit>日本語</OverlayUnit>
+                        <OverlayAnchor
+                            onClick={() => {
+                                this.setState(prev => ({ isActive: !prev.isActive }));
+                        }}>
+                            <OverlayUnit $highlight>日本語</OverlayUnit>
                         </OverlayAnchor>
                         <OverlayAnchor href='/fr'>
                             <OverlayUnit>français</OverlayUnit>

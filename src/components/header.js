@@ -8,7 +8,8 @@ import { Link } from 'gatsby'
 
 import THEME from '../theme'
 import LogoHeader from '../components/logo-header-ja'
-import TwitterSquare from '../components/twitter-square'
+import Twitter from '../components/twitter-straight'
+import Github from '../components/github-straight'
 import ButtonNav from '../components/button-nav'
 
 const { Provider, Consumer } = React.createContext();
@@ -66,19 +67,16 @@ const SpanLarge = styled('span', ({ $theme }) => ({
 }));
 SpanLarge.displayName = 'SpanLarge';
 
-const StyledTwitterSquare = styled('a', ({ $theme }) => ({
-    width: THEME.sizing[3],
-    height: THEME.sizing[3],
-    paddingTop: '.3rem',
-    paddingRight: '.8rem',
-    paddingBottom: '.3rem',
-    paddingLeft: '.8rem',
-    '@media screen and (max-width: 959px) and (min-width: 768px)': {
-      display: 'none',
-    },
-    '@media screen and (max-width: 767px)': {
-      display: 'none',
-    },
+const StyledTwitterSquare = styled('div', ({ $theme }) => ({
+  display: 'inline-block',
+  position: 'absolute',
+  bottom: '-3px',
+  '@media screen and (max-width: 959px) and (min-width: 768px)': {
+    display: 'none',
+  },
+  '@media screen and (max-width: 767px)': {
+    display: 'none',
+  },
 }));
 StyledTwitterSquare.displayName = 'StyledTwitterSquare';
 
@@ -169,9 +167,16 @@ function Home() {
                     <StyleAnchor1 href='#contact'>
                       <SpanLarge>お問い合わせ</SpanLarge>
                     </StyleAnchor1>
-                    <StyledTwitterSquare>
-                      <TwitterSquare></TwitterSquare>
-                    </StyledTwitterSquare>
+                    <StyleAnchor1 href='https://twitter.com/@bf7afa37fa94ja'>
+                      <SpanLarge>
+                        <Twitter></Twitter>
+                      </SpanLarge>
+                    </StyleAnchor1>
+                    <StyleAnchor1 href='https://github.com/tidiview/francois-vidit.com'>
+                      <SpanLarge>
+                          <Github></Github>
+                      </SpanLarge>
+                    </StyleAnchor1>
                     <ButtonNav></ButtonNav>
                   </Nav>
               </HeaderDiv>
