@@ -96,18 +96,14 @@ class MyApp extends React.Component {
             width: '25%',
             marginLeft: 'auto',
             marginRight: 'auto',
-            color: '#818181',
-            backgroundColor: 'inherit',
+            color: props.$highlight ? '#000' : '#818181',
+            backgroundColor: props.$highlight ? '#ccc' : 'inherit',
             fontSize: '36px',
             fontFamily: THEME.fontFamily[0],
             paddingLeft: '5%',
             ':hover': {
-                backgroundColor: '#818181',
-                color: '#fff',
-            },
-            '#home:target': {
-                backgroundColor: '#ccc',
-                color: '#818181',
+                backgroundColor: props.$highlight ? '#fff' : '#818181',
+                color: props.$highlight ? '#000' : '#fff',
             },
             '@media screen and (max-width: 959px) and (min-width: 768px)': {
                 width: '60%',
@@ -133,7 +129,7 @@ class MyApp extends React.Component {
                 <Button
                     $isActive={isActive}
                     onClick={() => {
-                    this.setState(prev => ({ isActive: !prev.isActive }));
+                        this.setState(prev => ({ isActive: !prev.isActive }));
                     }}>
                     <ThreeBarsMenu></ThreeBarsMenu>
                 </Button>
@@ -142,14 +138,17 @@ class MyApp extends React.Component {
                     <OverlayClose
                         $isActive={isActive}
                         onClick={() => {
-                        this.setState(prev => ({ isActive: !prev.isActive }));
+                            this.setState(prev => ({ isActive: !prev.isActive }));
                         }}>
                         <CloseButton></CloseButton>
                     </OverlayClose>
                     <OverlayContent
                         $isActive={isActive}>
-                        <OverlayAnchor id='home' href='/#home'>
-                            <OverlayUnit>ホ－ム</OverlayUnit>
+                        <OverlayAnchor
+                            onClick={() => {
+                                this.setState(prev => ({ isActive: !prev.isActive }));
+                        }}>
+                            <OverlayUnit $highlight>ホ－ム</OverlayUnit>
                         </OverlayAnchor>
                         <OverlayAnchor href='/c-u'>
                             <OverlayUnit>使用条件</OverlayUnit>
