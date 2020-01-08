@@ -60,10 +60,10 @@ class MyApp extends React.Component {
                 transition: 'all 0.4s ease',
             },
             '@media screen and (max-width: 959px) and (min-width: 768px)': {
-                right: '5rem'
+                right: '5rem',
             },
             '@media screen and (max-width: 767px)': {
-                right: '.5rem'
+                right: '.5rem',
             },
         }));
         OverlayClose.displayName = 'OverlayClose';
@@ -113,9 +113,11 @@ class MyApp extends React.Component {
             },
             '@media screen and (max-width: 767px)': {
                 width: '90%',
-                fontSize: '18px',
+                fontSize: '24px',
                 marginTop: '20px',
                 marginBottom: '20px',
+                paddingTop: '14px',
+                paddingBottom: '14px',
             },
         }));
         OverlayUnit.displayName = 'OverlayUnit';
