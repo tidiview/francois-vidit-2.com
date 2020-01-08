@@ -114,8 +114,8 @@ class MyApp extends React.Component {
             '@media screen and (max-width: 767px)': {
                 width: '90%',
                 fontSize: '22px',
-                marginTop: '18px',
-                marginBottom: '18px',
+                marginTop: '14px',
+                marginBottom: '14px',
                 paddingTop: '14px',
                 paddingBottom: '14px',
             },
