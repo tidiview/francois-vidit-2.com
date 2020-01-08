@@ -110,6 +110,9 @@ const StyleAnchor1 = styled('a', ({ $theme }) => ({
       bottom: '0px',
       left: '0px',
     },
+    '@media screen and (max-width: 1300px) and (min-width: 959px)': {
+      display: 'block',
+    },
     '@media screen and (max-width: 959px) and (min-width: 768px)': {
       display: 'none',
     },
@@ -149,8 +152,6 @@ function Home() {
                   <LogoHeader />
                 </Link>
                   <Nav>
-                    <SpanLarge>
-                    </SpanLarge>
                     <StyleAnchor1 href='#blog'>
                       <SpanLarge>ブログ</SpanLarge>
                     </StyleAnchor1>

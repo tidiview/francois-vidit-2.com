@@ -2,6 +2,8 @@ import React from 'react'
 import { styled } from 'styletron-react'
 import ThreeBarsMenu from '../components/three-bars-menu'
 import CloseButton from '../components/close-button'
+import TwitterSquare from '../components/twitter-square'
+import GithubSquare from '../components/github-square'
 import THEME from '../theme'
 
 const Layout = styled('div', ({
@@ -129,6 +131,13 @@ class MyApp extends React.Component {
         }));
         OverlayAnchor.displayName = 'OverlayAnchor';
 
+        const OverlayIcon = styled('div', props => ({
+            display: props.$isActive ? 'none' : 'inline-block',
+            verticalAlign: 'middle',
+            height: '30px',
+        }));
+        OverlayIcon.displayName = 'OverlayIcon';
+
         const { isActive } = this.state;
 
         return (
@@ -174,10 +183,18 @@ class MyApp extends React.Component {
                             <OverlayUnit>プロフィール</OverlayUnit>
                         </OverlayAnchor>
                         <OverlayAnchor href='https://twitter.com/@bf7afa37fa94ja'>
-                            <OverlayUnit>twitter</OverlayUnit>
+                            <OverlayUnit>
+                                <OverlayIcon>
+                                    <TwitterSquare></TwitterSquare>
+                                </OverlayIcon>
+                            </OverlayUnit>
                         </OverlayAnchor>
                         <OverlayAnchor href='https://github.com/tidiview/francois-vidit.com'>
-                            <OverlayUnit>github</OverlayUnit>
+                            <OverlayUnit>
+                                <OverlayIcon>
+                                    <GithubSquare></GithubSquare>
+                                </OverlayIcon>
+                            </OverlayUnit>
                         </OverlayAnchor>
                         <OverlayAnchor
                             onClick={() => {
