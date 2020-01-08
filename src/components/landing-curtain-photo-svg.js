@@ -13,7 +13,8 @@ const DIVSVG = styled('div', {
     },
     '@media screen and (max-width: 767px)': {
         height: '100px',
-        width: '25vw',
+        width: '30vw',
+        maxWidth: '150px',
         left: '4px',
         right: '4px',
         bottom: '60px',
@@ -32,12 +33,14 @@ const H1svg = styled('div', {
     width: '414px',
     height: '180px',
     '@media screen and (max-width: 959px) and (min-width: 768px)': {
-        height: '299px',
+        height: '200px',
         width: '35vw',
+        maxWidth: '400px',
     },
     '@media screen and (max-width: 767px)': {
-        height: '230px',
-        width: '50vw',
+        height: '130px',
+        width: '70vw',
+        maxWidth: '300px',
     }
 });
 H1svg.displayName = 'H1svg';
