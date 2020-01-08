@@ -99,6 +99,8 @@ class MyApp extends React.Component {
             color: props.$highlight ? '#000' : '#818181',
             backgroundColor: props.$highlight ? '#d9d9d9' : 'inherit',
             fontSize: '36px',
+            marginTop: '10px',
+            marginBottom: '10px',
             fontFamily: THEME.fontFamily[0],
             paddingLeft: '5%',
             ':hover': {
@@ -110,8 +112,6 @@ class MyApp extends React.Component {
                 fontSize: '32px',
             },
             '@media screen and (max-width: 767px)': {
-                marginTop: '10px',
-                marginBottom: '10px',
                 width: '90%',
                 fontSize: '18px',
             },
