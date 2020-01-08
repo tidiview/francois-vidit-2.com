@@ -114,6 +114,8 @@ class MyApp extends React.Component {
             '@media screen and (max-width: 767px)': {
                 width: '90%',
                 fontSize: '18px',
+                marginTop: '20px',
+                marginBottom: '20px',
             },
         }));
         OverlayUnit.displayName = 'OverlayUnit';
