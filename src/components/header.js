@@ -56,7 +56,6 @@ const Nav = styled('nav', ({ $theme }) => ({
 Nav.displayName = 'Nav';
 
 const SpanLarge = styled('span', ({ $theme }) => ({
-  display: 'initial',
   fontFamily: THEME.fontFamily[0],
   '@media screen and (max-width: 959px) and (min-width: 768px)': {
     display: 'none',
