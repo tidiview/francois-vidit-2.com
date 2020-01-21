@@ -43,7 +43,6 @@ module.exports = {
       }
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-styletron`,
       options: {
@@ -62,33 +61,11 @@ module.exports = {
         background_color: `#000`,
         theme_color: `#c70102`,
         display: `standalone`,
-        icon: `src/images/favicon-fr.png`,
-        lang: `fr`,
-        localize: [
-          {
-            start_url: `/fr/`,
-            name: `francois-vidit.com`,
-            short_name: `francois-vidit`,
-            icon: `src/images/favicon-fr.png`,
-            lang: `fr`,
-          },
-          {
-            start_url: `/ja/`,
-            name: `francois-vidit.com`,
-            short_name: `francois-vidit`,
-            icon: `src/images/favicon-ja.png`,
-            lang: `ja`,
-          },
-          {
-            start_url: `/en/`,
-            name: `francois-vidit.com`,
-            short_name: `francois-vidit`,
-            icon: `src/images/favicon-en.png`,
-            lang: `en`,
-          },
-        ],
+        icon: `src/images/favicon-ja.svg`,
       },
     },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-svgr`,
     {
       resolve: `gatsby-plugin-netlify`,
