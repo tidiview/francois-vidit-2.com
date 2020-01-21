@@ -76,10 +76,10 @@ export default () => (
   <Layout id='blog'>
     <StyledMarkFooter></StyledMarkFooter>
     <Text1>とは、</Text1>
-    <Link to='/blog'>
+    <Link aria-label='ブログ・ページーへ移動する' to='/blog'>
       <Text2></Text2>
     </Link>
-    <Link to='/blog'>
+    <Link aria-label='ブログ・ページーへ移動する' to='/blog'>
       <BlogJa></BlogJa>
     </Link>
   </Layout>

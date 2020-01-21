@@ -28,7 +28,7 @@ export default ({ data }) => (
     <Layout>
         <DivSvg></DivSvg>
         <Buttons></Buttons>
-        <Anchor href='#blog'>
+        <Anchor aria-label='ブログ・セクションへ移動する' href='#blog'>
             <Arrow></Arrow>
         </Anchor>
     </Layout>

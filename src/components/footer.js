@@ -99,24 +99,24 @@ export default () => (
   <Footer>
     <ToTop>
         <SpanArrow>
-            <a href="#top"><Arrow></Arrow></a>
+            <a aria-label='ページーの上へ戻る' href="#top"><Arrow></Arrow></a>
         </SpanArrow>
     </ToTop>
     <Padding>
         <Flex order='1'>
-            <StyledLink to="/profile">プロフィール</StyledLink>
+            <StyledLink aria-label='プロフィール・ページーへ移動する' to="/profile">プロフィール</StyledLink>
             <br></br>
-            <StyledLink to="/blog">ブログ</StyledLink>
+            <StyledLink aria-label='ブログ・ページーへ移動する' to="/blog">ブログ</StyledLink>
         </Flex>
         <Flex order='2' $style={{ width: '60%' }}>
-            <a href="#top"><MarkFooter></MarkFooter></a>
+            <a aria-label='ページーの上へ戻る' href="#top"><MarkFooter></MarkFooter></a>
             <br></br>
-            <SpanCopyright>2015 - 2019</SpanCopyright> <SpanCopyright $style={{ color: '#fff' }}>©</SpanCopyright>
-            <StyledLink to="/c-u"> all rights reserved</StyledLink>
+            <SpanCopyright>2015 - 2020</SpanCopyright> <SpanCopyright $style={{ color: '#fff' }}>©</SpanCopyright>
+            <StyledLink aria-label='使用条件・ページーへ移動する' to="/c-u"> all rights reserved</StyledLink>
         </Flex>
         
         <Flex order='3'>
-            <StyledLink to="/profile">ドックス</StyledLink>
+            <StyledLink aria-label='ドックス・ページーへ移動する' to="/docs">ドックス</StyledLink>
             <br></br>
         </Flex>
     </Padding>

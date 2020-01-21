@@ -177,22 +177,22 @@ CenterRt.displayName = 'CenterRt';
 
 export default ({ data }) => (
     <Layout>
-        <LeftContainer>
-            <SideStyledAnchor to='/en'>
+        <LeftContainer aria-label='english'>
+            <SideStyledAnchor aria-label='go to the english page' to='/en'>
                 <SideRuby lang='en'>
                     <span title='英語'>english</span><SideRt lang='fr'>anglais</SideRt>
                 </SideRuby>
             </SideStyledAnchor>
         </LeftContainer>
         <CenterContainer >
-            <CenterStyledAnchor href='#blog'>
+            <CenterStyledAnchor aria-label='日本語' href='#blog'>
                 <CenterRuby lang='ja'>
                     <span title='japanese'>日本語</span><CenterRt lang='fr'>japonais</CenterRt>
                 </CenterRuby>
             </CenterStyledAnchor>
         </CenterContainer>
-        <RightContainer>
-            <SideStyledAnchor to='/fr'>
+        <RightContainer aria-label='français'>
+            <SideStyledAnchor aria-label='aller sur la page en français' to='/fr'>
                 <SideRuby lang='fr'>
                     <span title='french'>français</span><SideRt lang='ja'>フランス語</SideRt>
                 </SideRuby>

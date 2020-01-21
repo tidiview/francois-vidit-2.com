@@ -49,10 +49,10 @@ Text1.displayName = 'Text1';
 
 export default () => (
   <Layout id='docs'>
-    <Link to='/docs'>
+    <Link aria-label='プロフィール・ページーへ移動する' to='/docs'>
       <Text1></Text1>
     </Link>
-    <Link to='/docs'>
+    <Link aria-label='プロフィール・ページーへ移動する' to='/docs'>
       <DocsJa></DocsJa>
     </Link>
   </Layout>

@@ -49,10 +49,10 @@ Text1.displayName = 'Text1';
 
 export default () => (
   <Layout id='profile'>
-    <Link to='/profile'>
+    <Link aria-label='プロフィール・ページーへ移動する' to='/profile'>
         <Text1></Text1>
     </Link>
-    <Link to='/profile'>
+    <Link aria-label='プロフィール・ページーへ移動する' to='/profile'>
         <ProfileJa></ProfileJa>
     </Link>
   </Layout>

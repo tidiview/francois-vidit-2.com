@@ -148,31 +148,31 @@ function Home() {
                 <html lang='ja' />
               </Helmet>
               <HeaderDiv>
-                <Link id='#home' to='/'>
+                <Link aria-label='ホーム' id='home' to='/'>
                   <LogoHeader />
                 </Link>
                   <Nav>
-                    <StyleAnchor1 href='#blog'>
+                    <StyleAnchor1 aria-label='ブログ・セクションへ移動する' href='#blog'>
                       <SpanLarge>ブログ</SpanLarge>
                     </StyleAnchor1>
-                    <StyleAnchor1 href='#docs'>
+                    <StyleAnchor1 aria-label='ドックス・セクションへ移動する' href='#docs'>
                       <SpanLarge>ドックス</SpanLarge>
                     </StyleAnchor1>
-                    <StyleAnchor1 href='#profile'>
+                    <StyleAnchor1 aria-label='プロフィール・セクションへ移動する' href='#profile'>
                       <SpanLarge>プロフィール</SpanLarge>
                     </StyleAnchor1>
-                    <StyleAnchor1 href='#real-time-schedule'>
+                    <StyleAnchor1 aria-label='リアル・タイムス・スケジュール・セクションへ移動する' href='#real-time-schedule'>
                       <SpanLarge>リアル・タイムス・スケジュール</SpanLarge>
                     </StyleAnchor1>
-                    <StyleAnchor1 href='#contact'>
+                    <StyleAnchor1 aria-label='お問い合わせ・セクションへ移動する' href='#contact'>
                       <SpanLarge>お問い合わせ</SpanLarge>
                     </StyleAnchor1>
-                    <StyleAnchor1 href='https://twitter.com/@bf7afa37fa94ja'>
+                    <StyleAnchor1 aria-label='ツイッターのページーへ移動する' href='https://twitter.com/@bf7afa37fa94ja'>
                       <SpanLarge>
                         <Twitter></Twitter>
                       </SpanLarge>
                     </StyleAnchor1>
-                    <StyleAnchor1 href='https://github.com/tidiview/francois-vidit.com'>
+                    <StyleAnchor1 aria-label='ギットハブのページーへ行く' href='https://github.com/tidiview/francois-vidit.com'>
                       <SpanLarge>
                         <Github></Github>
                       </SpanLarge>

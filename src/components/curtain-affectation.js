@@ -119,7 +119,7 @@ export default () => (
     <Text2>以下に<wbr/>表示されているのは<wbr/><Span1>一般の申し込みが<wbr/>可能なツアーのみ</Span1>です。<wbr/>２０１９年０４月２６日（金）２２：１５（パリ）<wbr/>０５：１５（東京）の情報です。
     </Text2>
     <Hr />
-    <A1 rel='preload' href='https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour' alt='申し込みはこちら：https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour' title='申し込みはこちら：https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour'>
+    <A1 aria-label='シティヴィジョン・ヴェルサイユ・ページーへ移動する' rel='preload' href='https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour' alt='申し込みはこちら：https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour' title='申し込みはこちら：https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour'>
       <Text3>０４月３０日（火） <wbr/>
         <Span2>ヴェルサイユ宮殿と<wbr/>トリアノン離宮<wbr/>一日ツアー</Span2>　
         <wbr/>

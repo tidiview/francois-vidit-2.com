@@ -143,7 +143,7 @@ class MyApp extends React.Component {
         return (
             <Layout
                 $isActive={isActive}>                
-                <Button
+                <Button aria-label='クローズ・ボタン'
                     $isActive={isActive}
                     onClick={() => {
                         this.setState(prev => ({ isActive: !prev.isActive }));
@@ -167,29 +167,29 @@ class MyApp extends React.Component {
                         }}>
                             <OverlayUnit $highlight>ホ－ム</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='/c-u'>
+                        <OverlayAnchor aria-label='使用条件のページーへ行く' href='/c-u'>
                             <OverlayUnit>使用条件</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='/crypto'>
+                        <OverlayAnchor aria-label='公開鍵のページーへ行く' href='/crypto'>
                             <OverlayUnit>公開鍵</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='/blog'>
+                        <OverlayAnchor aria-label='ブログのページーへ行く' href='/blog'>
                             <OverlayUnit>ブログ</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='/docs'>
+                        <OverlayAnchor aria-label='ドックスのページーへ行く' href='/docs'>
                             <OverlayUnit>ドックス</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='/profile'>
+                        <OverlayAnchor aria-label='プロフィールのページーへ行く' href='/profile'>
                             <OverlayUnit>プロフィール</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='https://twitter.com/@bf7afa37fa94ja'>
+                        <OverlayAnchor aria-label='ツイッターのページーへ行く' href='https://twitter.com/@bf7afa37fa94ja'>
                             <OverlayUnit>
                                 <OverlayIcon>
                                     <TwitterSquare></TwitterSquare>
                                 </OverlayIcon>
                             </OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='https://github.com/tidiview/francois-vidit.com'>
+                        <OverlayAnchor aria-label='ギットハブのページーへ行く' href='https://github.com/tidiview/francois-vidit.com'>
                             <OverlayUnit>
                                 <OverlayIcon>
                                     <GithubSquare></GithubSquare>
@@ -202,10 +202,10 @@ class MyApp extends React.Component {
                         }}>
                             <OverlayUnit $highlight>日本語</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='/fr'>
+                        <OverlayAnchor aria-label='フランス語のページーへ行く' href='/fr'>
                             <OverlayUnit>français</OverlayUnit>
                         </OverlayAnchor>
-                        <OverlayAnchor href='/en'>
+                        <OverlayAnchor aria-label='英語のページーへ行く' href='/en'>
                             <OverlayUnit>english</OverlayUnit>
                         </OverlayAnchor>
                     </OverlayContent>
