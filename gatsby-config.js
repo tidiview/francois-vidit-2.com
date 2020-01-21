@@ -62,6 +62,7 @@ module.exports = {
         theme_color: `#c70102`,
         display: `standalone`,
         icon: `src/images/favicon-ja.svg`,
+        crossOrigin: `use-credentials`,
       },
     },
     `gatsby-plugin-offline`,
