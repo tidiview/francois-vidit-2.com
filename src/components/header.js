@@ -161,8 +161,8 @@ function Home() {
                     <StyleAnchor1 aria-label='プロフィール・セクションへ移動する' href='#profile'>
                       <SpanLarge>プロフィール</SpanLarge>
                     </StyleAnchor1>
-                    <StyleAnchor1 aria-label='リアル・タイムス・スケジュール・セクションへ移動する' href='#real-time-schedule'>
-                      <SpanLarge>リアル・タイムス・スケジュール</SpanLarge>
+                    <StyleAnchor1 aria-label='リアルタイム・スケジュール・セクションへ移動する' href='#realtime-schedule'>
+                      <SpanLarge>リアルタイム・スケジュール</SpanLarge>
                     </StyleAnchor1>
                     <StyleAnchor1 aria-label='お問い合わせ・セクションへ移動する' href='#contact'>
                       <SpanLarge>お問い合わせ</SpanLarge>

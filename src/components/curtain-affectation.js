@@ -1,4 +1,7 @@
 import React from 'react'
+import moment from 'moment'
+import 'moment/locale/ja';
+import toWideAlphanumeric from 'jaco/fn/toWideAlphanumeric'
 import { StaticQuery, graphql } from 'gatsby'
 import { styled } from 'styletron-react'
 
@@ -119,7 +122,7 @@ export default () => (
     query={graphql`
       query DatingQuery {
         file(extension: {eq: "yaml"}) {
-          changeTime(formatString: "YYYY年MM月DD日（ddd）kk：mm", locale: "ja")
+          changeTime
           childDataYaml {
             futur {
               date1 {
@@ -136,14 +139,14 @@ export default () => (
       }
     `}
     render={data => (
-      <Layout id='real-time-schedule'>
-        <H4>リアル・タイムス・ケジュール</H4>
-        <Text2>以下に<wbr/>表示されているのは<wbr/><Span1>一般の申し込みが<wbr/>可能なツアーのみ</Span1>です。<wbr/>{data.file.changeTime}（パリ）{data.file.changeTime}<wbr/>の情報です。
+      <Layout id='realtime-schedule'>
+        <H4>リアルタイム・スケジュール</H4>
+        <Text2>以下に<wbr/>表示されているのは<wbr/><Span1>一般の申し込みが<wbr/>可能なツアーのみ</Span1>です。<wbr/>{toWideAlphanumeric(moment(moment(data.file.changeTime)).utcOffset(1).format('YYYY年MM月DD日（ddd）kk：mm'))}（パリ）{toWideAlphanumeric(moment(moment(data.file.changeTime)).utcOffset(9).format('kk：mm'))}（東京）<wbr/>の情報です。
         </Text2>
         <Hr />
         <A1 aria-label='シティヴィジョン・{data.file.childDataYaml.futur.date1.code}・ページーへ移動する' rel='preload' href='https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour' alt='申し込みはこちら：https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour' title='申し込みはこちら：https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour'>
-          <Text3>{data.file.childDataYaml.futur.date1.date.slice(3, 5)}月{data.file.childDataYaml.futur.date1.date.slice(0, 2)}日　<wbr/>
-            <Span2>ヴェルサイユ宮殿と<wbr/>トリアノン離宮<wbr/>一日ツアー</Span2>　
+          <Text3>{toWideAlphanumeric(moment(moment(data.file.childDataYaml.futur.date1.date, 'DD-MM-YYYY')).format('MM月DD日（ddd）'))}<wbr/>　
+            <Span2>ヴェルサイユ宮殿と<wbr/>トリアノン離宮 <wbr/>一日ツアー</Span2>　
             <wbr/>
             <Span3>
               <Span4>ツアーコード</Span4>
