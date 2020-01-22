@@ -1,4 +1,5 @@
 import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 import { styled } from 'styletron-react'
 
 const H4 = styled('h4', {
@@ -114,23 +115,46 @@ const A1 = styled('a', {
 A1.displayName = 'A1';
 
 export default () => (
-  <Layout id='real-time-schedule'>
-    <H4>リアル・タイムス・ケジュール</H4>
-    <Text2>以下に<wbr/>表示されているのは<wbr/><Span1>一般の申し込みが<wbr/>可能なツアーのみ</Span1>です。<wbr/>２０１９年０４月２６日（金）２２：１５（パリ）<wbr/>０５：１５（東京）の情報です。
-    </Text2>
-    <Hr />
-    <A1 aria-label='シティヴィジョン・ヴェルサイユ・ページーへ移動する' rel='preload' href='https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour' alt='申し込みはこちら：https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour' title='申し込みはこちら：https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour'>
-      <Text3>０４月３０日（火） <wbr/>
-        <Span2>ヴェルサイユ宮殿と<wbr/>トリアノン離宮<wbr/>一日ツアー</Span2>　
-        <wbr/>
-        <Span3>
-          <Span4>ツアーコード</Span4>
-          <Span5>VT</Span5>
-        </Span3>
-        　<wbr/>
-        <Span6>申し込みはこちら...</Span6>
-        </Text3>
-    </A1>
-    <Hr />
-  </Layout>
+  <StaticQuery
+    query={graphql`
+      query DatingQuery {
+        file(extension: {eq: "yaml"}) {
+          changeTime(formatString: "YYYY年MM月DD日（ddd）kk：mm", locale: "ja")
+          childDataYaml {
+            futur {
+              date1 {
+                date
+                code
+                lang
+                from
+                status
+                length
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Layout id='real-time-schedule'>
+        <H4>リアル・タイムス・ケジュール</H4>
+        <Text2>以下に<wbr/>表示されているのは<wbr/><Span1>一般の申し込みが<wbr/>可能なツアーのみ</Span1>です。<wbr/>{data.file.changeTime}（パリ）{data.file.changeTime}<wbr/>の情報です。
+        </Text2>
+        <Hr />
+        <A1 aria-label='シティヴィジョン・{data.file.childDataYaml.futur.date1.code}・ページーへ移動する' rel='preload' href='https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour' alt='申し込みはこちら：https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour' title='申し込みはこちら：https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour'>
+          <Text3>{data.file.childDataYaml.futur.date1.date.slice(3, 5)}月{data.file.childDataYaml.futur.date1.date.slice(0, 2)}日　<wbr/>
+            <Span2>ヴェルサイユ宮殿と<wbr/>トリアノン離宮<wbr/>一日ツアー</Span2>　
+            <wbr/>
+            <Span3>
+              <Span4>ツアーコード</Span4>
+              <Span5>{data.file.childDataYaml.futur.date1.code}</Span5>
+            </Span3>
+            　<wbr/>
+            <Span6>申し込みはこちら...</Span6>
+            </Text3>
+        </A1>
+        <Hr />
+      </Layout>
+    )}
+  />
 )
