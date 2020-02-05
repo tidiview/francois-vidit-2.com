@@ -1,16 +1,23 @@
 futur:
      date1:
-         date: '26-01-2020, 07:15'
+         date: '08-02-2020, 08:30'
+         code: VT
+         lang: ja
+         from: '30-01-2020, 23:38'
+         status: EventScheduled
+         length: '+10 hours'
+     date2:
+         date: '09-02-2020, 07:15'
          code: BR
          lang: ja
-         from: '19-01-2020, 22:02'
+         from: '30-01-2020, 23:38'
          status: EventScheduled
          length: '+13 hours 30 minutes'
 #     date2:
-#         date: '20-01-2020, 08:00'
+#         date: '03-02-2020, 08:00'
 #         code: RC
 #         lang: ja
-#         from: '16-01-2020, 19:17'
+#         from: '30-01-2020, 23:38'
 #         status: EventScheduled
 #         length: '+10 hours 30 minutes'
 #     date3:
@@ -20,13 +27,6 @@ futur:
 #         from: '11-01-2020, 17:33'
 #         status: EventScheduled
 #         length: '+2 hours 30 minutes'
-#     date2:
-#         date: '14-01-2020, 08:30'
-#         code: VT
-#         lang: ja
-#         from: '10-01-2020, 19:33'
-#         status: EventScheduled
-#         length: '+10 hours'
 #    date1:
 #        date: '10-11-2019, 09:30'
 #        code: PAJ
