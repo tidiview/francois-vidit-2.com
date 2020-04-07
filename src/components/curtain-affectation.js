@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment'
-import 'moment/locale/ja';
+import 'moment/locale/ja'
 import toWideAlphanumeric from 'jaco/fn/toWideAlphanumeric'
 import { StaticQuery, graphql } from 'gatsby'
 import { styled } from 'styletron-react'
@@ -40,7 +40,7 @@ const Text2 = styled('p', {
   Text2.displayName = 'Text2';
 
 const Span1 = styled('span', {
-    fontWeight: '700',
+    fontWeight: '400',
 });
 Span1.displayName = 'Span1';
 
@@ -54,15 +54,35 @@ const Hr = styled('hr', {
 });
 Hr.displayName = 'Hr';
 
+const couleurslignes = [ '#bea893', '#a8be93', '#93be93', '#93bebe', '#93a8be', '#94b5ce', '#a2b1d6', '#c2c273', '#beb6ca' ]
 
+function shuffle(arra1) {
+  let ctr = arra1.length;
+  let temp;
+  let index;
+// While there are elements in the array
+  while (ctr > 0) {
+// Pick a random index
+      index = Math.floor(Math.random() * ctr);
+// Decrease ctr by 1
+      ctr--;
+// And swap the last element with it
+      temp = arra1[ctr];
+      arra1[ctr] = arra1[index];
+      arra1[index] = temp;
+  }
+  return arra1;
+}
+
+const shufflecouleurslignes = shuffle(couleurslignes)
 
 const Text3 = styled('p', {
   backgroundColor: '#a2b1d6',
   wordBreak: 'keep-all',
   fontFamily: 'Yu Gothic Medium, sans-serif',
   padding: '1.5rem .8rem',
-  marginBottom: '0',
   marginTop: '0',
+  marginBottom: '0',
   color: 'white',
   ':hover': {
     backgroundColor: '#666'
@@ -75,9 +95,22 @@ const Text3 = styled('p', {
 });
 Text3.displayName = 'Text3';
 
+const Text4 = styled('p', {
+  wordBreak: 'keep-all',
+  fontFamily: 'Yu Gothic Medium, sans-serif',
+  padding: '1.5rem .8rem',
+  marginTop: '0',
+  marginBottom: '0',
+  color: 'white',
+  cursor: 'context-menu',
+});
+Text4.displayName = 'Text4';
+
 const Span2 = styled('span', {
-    fontWeight: '700',
-    borderBottom: '1px dotted white',
+    fontWeight: '400',
+    borderBottomWidth: '1px',
+    borderBottomStyle: 'dotted',
+    borderBottomColor: 'white',
     paddingBottom: '.02rem',
 });
 Span2.displayName = 'Span2';
@@ -112,52 +145,168 @@ const Span6 = styled('span', {
 });
 Span6.displayName = 'Span6';
 
+const Span7 = styled('span', {
+  backgroundColor: 'crimson',
+  paddingLeft: '.4rem',
+  paddingRight: '.4rem',
+  border: '1px solid white',
+  color: 'white',
+  animationDuration: '3s',
+  animationIterationCount: '25',
+  animationName: {
+    '0%': {'opacity': 1},
+    '40%': {'opacity': 1},
+    '40.01%': {'opacity': 0},
+    '60%': {'opacity': 0},
+    '60.01%': {'opacity': 1},
+    '100%': {'opacity':1}
+  }
+});
+Span7.displayName = 'Span7';
+
+const Span8 = styled('span', {
+    fontWeight: '400',
+    paddingBottom: '.02rem',
+    textDecorationLine: 'line-through',
+    textDecorationStyle: 'double',
+    textDecorationColor: 'crimson',
+});
+Span8.displayName = 'Span8';
+
+const Span9 = styled('span', {
+  backgroundColor: '#009933',
+  paddingLeft: '.4rem',
+  paddingRight: '.4rem',
+  border: '1px solid white',
+  color: 'white',
+  animationDuration: '3s',
+  animationIterationCount: '25',
+  animationName: {
+    '0%': {'opacity': 1},
+    '40%': {'opacity': 1},
+    '40.01%': {'opacity': 0},
+    '60%': {'opacity': 0},
+    '60.01%': {'opacity': 1},
+    '100%': {'opacity':1}
+  }
+});
+Span9.displayName = 'Span9';
+
 const A1 = styled('a', {
   textDecoration: 'none',
 });
 A1.displayName = 'A1';
 
+const Container = styled('div', {
+  textDecoration: 'none',
+});
+Container.displayName = 'Container';
+
 export default () => (
-  <StaticQuery
-    query={graphql`
-      query DatingQuery {
-        file(extension: {eq: "yaml"}) {
-          changeTime
-          childDataYaml {
-            futur {
-              date1 {
-                date
-                code
-                lang
-                from
-                status
-                length
-              }
-            }
-          }
+  ListeDates()
+)
+
+function ListeDates() {
+  return <StaticQuery query={graphql`{
+    file(extension: {eq: "yaml"}) {
+      changeTime
+    }
+    allAffectationYaml(sort: {fields: depart, order: ASC}) {
+      edges {
+        node {
+          codelang
+          depart
+          code
+          lang
+          length
+          status
         }
       }
-    `}
-    render={data => (
-      <Layout id='realtime-schedule'>
-        <H4>リアルタイム・スケジュール</H4>
-        <Text2>以下に<wbr/>表示されているのは<wbr/><Span1>一般の申し込みが<wbr/>可能なツアーのみ</Span1>です。<wbr/>{toWideAlphanumeric(moment(moment(data.file.changeTime)).utcOffset(1).format('YYYY年MM月DD日（ddd）kk：mm'))}（パリ）{toWideAlphanumeric(moment(moment(data.file.changeTime)).utcOffset(9).format('kk：mm'))}（東京）<wbr/>の情報です。
-        </Text2>
-        <Hr />
-        <A1 aria-label='シティヴィジョン・{data.file.childDataYaml.futur.date1.code}・ページーへ移動する' rel='preload' href='https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour' alt='申し込みはこちら：https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour' title='申し込みはこちら：https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour'>
-          <Text3>{toWideAlphanumeric(moment(moment(data.file.childDataYaml.futur.date1.date, 'DD-MM-YYYY')).format('MM月DD日（ddd）'))}<wbr/>　
-            <Span2>ヴェルサイユ宮殿と<wbr/>トリアノン離宮 <wbr/>一日ツアー</Span2>　
-            <wbr/>
+    }
+    allCatalogueYaml {
+      edges {
+        node {
+          codelang
+          cityvisionlink
+          denomination
+        }
+      }
+    }
+  }
+  `} render={data => 
+  <Layout id='realtime-schedule'>
+    <H4>リアルタイム・スケジュール</H4>
+    <Text2>以下に<wbr />表示されているのは<wbr /><Span1>一般の申し込みが<wbr />可能なツアーのみ</Span1>です。<wbr />{toWideAlphanumeric(moment(moment(data.file.changeTime)).format('YYYY年MM月DD日（ddd）HH：mm'))}（パリ）{toWideAlphanumeric(moment(moment(data.file.changeTime)).utcOffset(9).format('HH：mm'))}（東京）<wbr />の情報です。
+    </Text2>
+    <Hr />
+    {data.allAffectationYaml.edges.map((array, key) => { 
+      let depart = array.node.depart
+      let code = array.node.code
+      let codelang = array.node.codelang
+      let status = array.node.status
+      let length = array.node.length
+      let array2 = data.allCatalogueYaml.edges.map(item => 
+        { let container = {}
+        container['codelang'] = item.node.codelang
+        container['cityvisionlink'] = item.node.cityvisionlink
+        container['denomination'] = item.node.denomination
+        if (codelang === item.node.codelang) {
+          return container } 
+        else {
+          return null }})
+        let filteredarray2 = array2.filter(item => item != null)[0]
+      let cityvisionlink = filteredarray2.cityvisionlink
+      let denomination = filteredarray2.denomination
+      if (
+        // service en cours (commencé), non annulé
+        (key === 0)
+        && (moment(moment(depart, 'YYYY-MM-DD HH:mm').add(moment.duration(length))) > moment(moment(data.file.changeTime))) 
+        && (moment(moment(depart, 'YYYY-MM-DD HH:mm')) < moment(moment(data.file.changeTime))) 
+        && (status !== 'EventCancelled')) {
+        return <Container>
+          <Text4 $style={{ backgroundColor: shufflecouleurslignes[key] }}>{toWideAlphanumeric(moment(moment(depart, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))} <wbr/>　
+            <Span2 $style={{ borderBottomStyle: 'none' }}>{denomination}</Span2>　<wbr/>
             <Span3>
               <Span4>ツアーコード</Span4>
-              <Span5>{data.file.childDataYaml.futur.date1.code}</Span5>
+              <Span5>{code}</Span5>
+            </Span3>
+            　<wbr/>
+            <Span9>只今案内中</Span9>
+          </Text4>
+          <Hr />
+        </Container>} 
+      else if (
+        // service prévu, non commencé, non annulé
+        (moment(moment(depart, 'YYYY-MM-DD HH:mm')) > moment(moment(data.file.changeTime))) 
+        && (status !== 'EventCancelled')
+        ) {
+        return <Container>
+          <A1 aria-label={'シティヴィジョン・' + code + '・ページーへ移動する'} rel='preload' href={cityvisionlink} alt={'申し込みはこちら：' + cityvisionlink} title={'申し込みはこちら：' + cityvisionlink}>
+          <Text3 $style={{ backgroundColor: shufflecouleurslignes[key] }}>{toWideAlphanumeric(moment(moment(depart, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))} <wbr/>　
+            <Span2>{denomination}</Span2>　<wbr/>
+            <Span3>
+              <Span4>ツアーコード</Span4>
+              <Span5>{code}</Span5>
             </Span3>
             　<wbr/>
             <Span6>申し込みはこちら...</Span6>
-            </Text3>
-        </A1>
+          </Text3>
+          </A1>
+          <Hr />
+        </Container>}
+      else if (
+        //service annulé
+        (moment(moment(depart, 'YYYY-MM-DD HH:mm')) > moment(moment(data.file.changeTime))) 
+        && status === 'EventCancelled') {
+        return <Container>
+        <Text3>{toWideAlphanumeric(moment(moment(array.node.depart, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))}　<wbr/>
+          <Span7>キャンセル</Span7>　<wbr/>
+          <Span8>{denomination}</Span8>
+        </Text3>
         <Hr />
-      </Layout>
-    )}
-  />
-)
+      </Container>}
+      else { 
+      return ''}
+    } )}
+  </Layout>}></StaticQuery>;
+}

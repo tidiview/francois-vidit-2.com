@@ -35,9 +35,8 @@ module.exports = {
       }
     },
     `gatsby-transformer-remark`,
-    `gatsby-transformer-yaml`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-transformer-yaml`,
       options: {
         name: `data`,
         path: path.join(__dirname, `/src/data/`),

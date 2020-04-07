@@ -1,0 +1,65 @@
+- depart: "2020-04-08 08:00"
+  code: RC
+  lang: ja
+  from: "2020-04-12 15:42"
+  status: EventScheduled
+  length: "PT10H30M"
+- depart: "2020-04-10 08:30"
+  code: VT
+  lang: ja
+  from: "2020-04-06 06:47"
+  status: EventScheduled
+  length: "PT10H"
+- depart: "2020-04-11 14:00"
+  code: GL
+  lang: en
+  from: "2020-04-06 06:47"
+  status: EventScheduled
+  length: "PT2H30M"
+- depart: "2020-04-07 10:15"
+  code: BR
+  lang: ja
+  from: "2020-04-07 16:35"
+  status: EventScheduled
+  length: "PT13H30M"
+#- depart: "2020-04-12 09:30"
+#  code: MS1
+#  lang: ja
+#  from: "2020-04-06 06:47"
+#  status: EventScheduled
+#  length: "PT14H"
+#- depart: "2020-04-15 09:30"
+#  code: GL
+#  lang: en
+#  from: "2020-04-07 10:32"
+#  status: EventScheduled
+#  length: "PT2H30M"
+#- depart: "2020-04-14 07:15"
+#  code: PAJ
+#  lang: en
+#  from: "2020-04-09 13:05"
+#  status: EventScheduled
+#  length: "PT10H"
+#- depart: "2020-04-13 08:15"
+#  code: GVA
+#  lang: ja
+#  from: "2020-10-01 10:51"
+#  status: EventScheduled
+#  length: "PT10H30M"
+#- depart: "2020-04-08 07:15"
+#  code: CL1
+#  lang: ja
+#  from: "2020-04-15 19:21"
+#  status: EventScheduled
+#  length: "PT13H15M"
+# EventCancelled / EventPostponed / EventRescheduled / EventScheduled
+# BR MS1 CL1 - 07:15
+# RC - 08:00
+# GVA - 08:15
+# VT - 08:30
+# MS1 +14 hours
+# CL1 +13 hours 15 minutes
+# BR +13 hours 30 minutes
+# RC +10 hours 30 minutes
+# VT +10 hours
+# GVA +9 hours 30 min
