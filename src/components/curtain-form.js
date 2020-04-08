@@ -22,25 +22,35 @@ const Layout = styled('section', {
 Layout.displayName = 'Layout';
 
 const H4 = styled('h4', {
-    fontSize: '1.25rem',
-    margin: '.85rem 0 1.7rem 0',
-    color: '#fff',
-    fontWeight: 400,
-    textAlign: 'center',
+  fontSize: '1.3rem',
+  marginTop: 'calc(0.85rem + 6.75vh)',
+  marginRight: 'auto',
+  marginBottom: '0.5rem',
+  marginLeft: 'auto',
+  color: 'white',
+  fontFamily: 'Yu Gothic Medium, sans-serif',
+  wordBreak: 'keep-all',
+  fontWeight: 400,
+  textAlign: 'center',
+  lineHeight: '6.75vh',
+  height: '7vh',
 });
 H4.displayName = 'H4';
 
 const Text2 = styled('p', {
   margin: '.3rem auto',
   textAlign: 'center',
-  color: '#fff',
+  color: 'white',
+  fontFamily: 'Yu Gothic Medium, sans-serif',
+  wordBreak: 'keep-all',
+  lineHeight: '2',
 });
 Text2.displayName = 'Text2';
 
 export default () => (
   <Layout id='contact'>
       <H4>お問い合わせ</H4>
-      <Text2>問い合わせるには、以下のフォームをご記入を：</Text2>
+      <Text2>問い合わせるには、<wbr/>以下のフォームをご記入を：</Text2>
       <Contact></Contact>
   </Layout>
 )

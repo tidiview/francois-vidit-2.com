@@ -10,7 +10,7 @@ function Contact (props) {
     Form.displayName = 'Form';
 
     const Label = styled('label', {
-        color: '#fff',
+        color: 'white',
         display: 'block',
         marginBottom: '.45rem',
         '::after': {
@@ -33,11 +33,11 @@ function Contact (props) {
         boxSizing: 'border-box',
         width: '100%',
         padding: '.45rem',
-        lineHeight: '1.5rem',
+        lineHeight: '1.6rem',
         fontSize: '16px',
         fontFamily: THEME.fontFamily[0],
         cursor: 'text',
-        caretColor: 'black',
+        caretColor: '#009933',
         ':focus': {
             color: '#666'
         },
@@ -45,7 +45,7 @@ function Contact (props) {
     Input.displayName = 'Input';
 
     const Button = styled('button', props => ({
-        color: '#fff',
+        color: 'white',
         padding: '.7rem 2rem',
         marginTop: '2rem',
         marginRight: props.$right ? '0.45rem' : '0',
