@@ -38,7 +38,7 @@ const H4 = styled('h4', {
 H4.displayName = 'H4';
 
 const Text2 = styled('p', {
-  margin: '.3rem auto',
+  margin: '0.3rem auto',
   textAlign: 'center',
   color: 'white',
   fontFamily: 'Yu Gothic Medium, sans-serif',

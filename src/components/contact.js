@@ -12,7 +12,7 @@ function Contact (props) {
     const Label = styled('label', {
         color: 'white',
         display: 'block',
-        marginBottom: '.45rem',
+        marginBottom: '0.45rem',
         '::after': {
             content: ''*'',
             color: 'crimson',
@@ -28,11 +28,11 @@ function Contact (props) {
     const Input = styled('input', {
         color: '#666',
         display: 'block',
-        borderRadius: '.3rem',
-        margin: '0 0 .45rem 0',
+        borderRadius: '0.3rem',
+        margin: '0 0 0.45rem 0',
         boxSizing: 'border-box',
         width: '100%',
-        padding: '.45rem',
+        padding: '0.45rem',
         lineHeight: '1.6rem',
         fontSize: '16px',
         fontFamily: THEME.fontFamily[0],
@@ -46,7 +46,7 @@ function Contact (props) {
 
     const Button = styled('button', props => ({
         color: 'white',
-        padding: '.7rem 2rem',
+        padding: '0.7rem 2rem',
         marginTop: '2rem',
         marginRight: props.$right ? '0.45rem' : '0',
         backgroundColor: 'rgba(255,255,255,0)',

@@ -57,7 +57,7 @@ module.exports = {
         // You can pass options to Styletron.
         // prefix: "_",
         //  Disable dev debug mode, enabled by default
-        debug: false,
+        debug: true,
       },
     },
     {
@@ -67,7 +67,7 @@ module.exports = {
         short_name: `francois-vidit`,
         start_url: `/`,
         background_color: `#000`,
-        theme_color: `#c70102`,
+        theme_color: `none`,
         display: `standalone`,
         icon: `src/images/favicon-ja.svg`,
         crossOrigin: `use-credentials`,
