@@ -39,7 +39,6 @@ Layout.displayName = 'Layout';
 const Text = styled('p', {
   color: 'white',
   fontFamily: 'Yu Gothic Medium, sans-serif',
-  wordBreak: 'keep-all',
   lineHeight: '2',
 });
 Text.displayName = 'Text';
@@ -47,6 +46,7 @@ Text.displayName = 'Text';
 const Text2 = styled(Text, {
   margin: '0.3rem 0',
   cursor: 'context-menu',
+  wordBreak: 'keep-all',
   });
   Text2.displayName = 'Text2';
 
@@ -215,8 +215,8 @@ function ListeDates() {
   }
   `} render={data => 
   <Layout id='realtime-schedule'>
-    <H4>リアルタイム・スケジュール</H4>
-    <Text2>以下に<wbr />表示されているのは<wbr /><Span1>一般の申し込みが<wbr />可能なツアーのみ</Span1>です。<wbr />{toWideAlphanumeric(moment(moment(data.file.changeTime)).format('YYYY年MM月DD日（ddd）HH：mm'))}（パリ）{toWideAlphanumeric(moment(moment(data.file.changeTime)).utcOffset(9).format('HH：mm'))}（東京）<wbr />の情報です。
+    <H4>リアルタイム・<wbr />スケジュール</H4>
+    <Text2>以下に<wbr />表示されているのは<wbr /><Span1>一般の申し込みが<wbr />可能なツアーのみ</Span1>です。<wbr />{toWideAlphanumeric(moment(moment(data.file.changeTime)).format('YYYY年MM月DD日（ddd）HH：mm'))}（パリ）<wbr />{toWideAlphanumeric(moment(moment(data.file.changeTime)).utcOffset(9).format('HH：mm'))}（東京）<wbr />の情報です。
     </Text2>
     <Hr />
     {data.allAffectationYaml.edges.map((array, key) => {
