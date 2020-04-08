@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 import { createStyled } from 'styletron-react'
 import { driver, getInitialStyle } from 'styletron-standard'

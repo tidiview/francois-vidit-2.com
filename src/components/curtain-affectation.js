@@ -3,14 +3,19 @@ import moment from 'moment'
 import 'moment/locale/ja'
 import toWideAlphanumeric from 'jaco/fn/toWideAlphanumeric'
 import { StaticQuery, graphql } from 'gatsby'
-import { styled } from 'styletron-react'
+import { styled, withStyle } from 'styletron-react'
 
 const H4 = styled('h4', {
-    fontSize: '1.25rem',
-    margin: '.85rem 0 1.7rem 0',
+    fontSize: '1.3rem',
+    marginTop: 'calc(0.85rem + 6.75vh)',
+    marginRight: 'auto',
+    marginBottom: '0.5rem',
+    marginLeft: 'auto',
     color: '#fff',
     fontWeight: 400,
     textAlign: 'center',
+    lineHeight: '6.75vh',
+    height: '7vh',
 });
 H4.displayName = 'H4';
 
@@ -31,11 +36,17 @@ const Layout = styled('section', {
 });
 Layout.displayName = 'Layout';
 
-const Text2 = styled('p', {
-    margin: '0.3rem 0',
-    color: 'white',
-    fontFamily: 'Yu Gothic Medium, sans-serif',
-    wordBreak: 'keep-all',
+const Text = styled('p', {
+  color: 'white',
+  fontFamily: 'Yu Gothic Medium, sans-serif',
+  wordBreak: 'keep-all',
+  lineHeight: '2',
+});
+Text.displayName = 'Text';
+
+const Text2 = styled(Text, {
+  margin: '.3rem 0',
+  cursor: 'context-menu',
   });
   Text2.displayName = 'Text2';
 
@@ -76,14 +87,11 @@ function shuffle(arra1) {
 
 const shufflecouleurslignes = shuffle(couleurslignes)
 
-const Text3 = styled('p', {
+const Text3 = withStyle(Text, {
   backgroundColor: '#a2b1d6',
-  wordBreak: 'keep-all',
-  fontFamily: 'Yu Gothic Medium, sans-serif',
   padding: '1.5rem .8rem',
   marginTop: '0',
   marginBottom: '0',
-  color: 'white',
   ':hover': {
     backgroundColor: '#666'
   },
@@ -95,19 +103,15 @@ const Text3 = styled('p', {
 });
 Text3.displayName = 'Text3';
 
-const Text4 = styled('p', {
-  wordBreak: 'keep-all',
-  fontFamily: 'Yu Gothic Medium, sans-serif',
+const Text4 = withStyle(Text, {
   padding: '1.5rem .8rem',
   marginTop: '0',
   marginBottom: '0',
-  color: 'white',
   cursor: 'context-menu',
 });
 Text4.displayName = 'Text4';
 
 const Span2 = styled('span', {
-    fontWeight: '400',
     borderBottomWidth: '1px',
     borderBottomStyle: 'dotted',
     borderBottomColor: 'white',
@@ -128,31 +132,24 @@ const Span4 = styled('span', {
 });
 Span4.displayName = 'Span4';
 
-const Span5 = styled('span', {
+const Span5 = withStyle(Span4, {
   backgroundColor: 'white',
-  color: '#666',
-  paddingLeft: '.4rem',
-  paddingRight: '.4rem',
 });
 Span5.displayName = 'Span5';
 
-const Span6 = styled('span', {
+const Span6 = withStyle(Span4, {
   backgroundColor: 'CornflowerBlue',
-  paddingLeft: '.4rem',
-  paddingRight: '.4rem',
-  border: '1px solid white',
   color: 'white',
+  border: '1px solid white',
 });
 Span6.displayName = 'Span6';
 
-const Span7 = styled('span', {
+const Span7 = withStyle(Span4, {
   backgroundColor: 'crimson',
-  paddingLeft: '.4rem',
-  paddingRight: '.4rem',
-  border: '1px solid white',
   color: 'white',
+  border: '1px solid white',
   animationDuration: '3s',
-  animationIterationCount: '25',
+  animationIterationCount: 'infinite',
   animationName: {
     '0%': {'opacity': 1},
     '40%': {'opacity': 1},
@@ -165,30 +162,15 @@ const Span7 = styled('span', {
 Span7.displayName = 'Span7';
 
 const Span8 = styled('span', {
-    fontWeight: '400',
-    paddingBottom: '.02rem',
     textDecorationLine: 'line-through',
     textDecorationStyle: 'double',
     textDecorationColor: 'crimson',
+    paddingBottom: '.02rem',
 });
 Span8.displayName = 'Span8';
 
-const Span9 = styled('span', {
+const Span9 = withStyle(Span7, {
   backgroundColor: '#009933',
-  paddingLeft: '.4rem',
-  paddingRight: '.4rem',
-  border: '1px solid white',
-  color: 'white',
-  animationDuration: '3s',
-  animationIterationCount: '25',
-  animationName: {
-    '0%': {'opacity': 1},
-    '40%': {'opacity': 1},
-    '40.01%': {'opacity': 0},
-    '60%': {'opacity': 0},
-    '60.01%': {'opacity': 1},
-    '100%': {'opacity':1}
-  }
 });
 Span9.displayName = 'Span9';
 
@@ -197,9 +179,7 @@ const A1 = styled('a', {
 });
 A1.displayName = 'A1';
 
-const Container = styled('div', {
-  textDecoration: 'none',
-});
+const Container = styled('div');
 Container.displayName = 'Container';
 
 export default () => (
@@ -239,7 +219,7 @@ function ListeDates() {
     <Text2>以下に<wbr />表示されているのは<wbr /><Span1>一般の申し込みが<wbr />可能なツアーのみ</Span1>です。<wbr />{toWideAlphanumeric(moment(moment(data.file.changeTime)).format('YYYY年MM月DD日（ddd）HH：mm'))}（パリ）{toWideAlphanumeric(moment(moment(data.file.changeTime)).utcOffset(9).format('HH：mm'))}（東京）<wbr />の情報です。
     </Text2>
     <Hr />
-    {data.allAffectationYaml.edges.map((array, key) => { 
+    {data.allAffectationYaml.edges.map((array, key) => {
       let depart = array.node.depart
       let code = array.node.code
       let codelang = array.node.codelang
@@ -257,20 +237,18 @@ function ListeDates() {
         let filteredarray2 = array2.filter(item => item != null)[0]
       let cityvisionlink = filteredarray2.cityvisionlink
       let denomination = filteredarray2.denomination
+      let firstcodelangkey = [codelang, key]
+      let codelangkey = firstcodelangkey.join('')
       if (
         // service en cours (commencé), non annulé
         (key === 0)
         && (moment(moment(depart, 'YYYY-MM-DD HH:mm').add(moment.duration(length))) > moment(moment(data.file.changeTime))) 
-        && (moment(moment(depart, 'YYYY-MM-DD HH:mm')) < moment(moment(data.file.changeTime))) 
+        && (moment(moment(depart, 'YYYY-MM-DD HH:mm')) < moment(moment(data.file.changeTime)))
         && (status !== 'EventCancelled')) {
-        return <Container>
-          <Text4 $style={{ backgroundColor: shufflecouleurslignes[key] }}>{toWideAlphanumeric(moment(moment(depart, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))} <wbr/>　
+        return <Container key={codelangkey}>
+          <Text4 $style={{ backgroundColor: shufflecouleurslignes[0] }}>{toWideAlphanumeric(moment(moment(depart, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))} <wbr/>　
             <Span2 $style={{ borderBottomStyle: 'none' }}>{denomination}</Span2>　<wbr/>
-            <Span3>
-              <Span4>ツアーコード</Span4>
-              <Span5>{code}</Span5>
-            </Span3>
-            　<wbr/>
+            <Span3><Span4>ツアーコード</Span4><Span5>{code}</Span5></Span3>　<wbr/>
             <Span9>只今案内中</Span9>
           </Text4>
           <Hr />
@@ -280,15 +258,11 @@ function ListeDates() {
         (moment(moment(depart, 'YYYY-MM-DD HH:mm')) > moment(moment(data.file.changeTime))) 
         && (status !== 'EventCancelled')
         ) {
-        return <Container>
+        return <Container key={codelangkey}>
           <A1 aria-label={'シティヴィジョン・' + code + '・ページーへ移動する'} rel='preload' href={cityvisionlink} alt={'申し込みはこちら：' + cityvisionlink} title={'申し込みはこちら：' + cityvisionlink}>
           <Text3 $style={{ backgroundColor: shufflecouleurslignes[key] }}>{toWideAlphanumeric(moment(moment(depart, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))} <wbr/>　
             <Span2>{denomination}</Span2>　<wbr/>
-            <Span3>
-              <Span4>ツアーコード</Span4>
-              <Span5>{code}</Span5>
-            </Span3>
-            　<wbr/>
+            <Span3><Span4>ツアーコード</Span4><Span5>{code}</Span5></Span3>　<wbr/>
             <Span6>申し込みはこちら...</Span6>
           </Text3>
           </A1>
@@ -298,11 +272,11 @@ function ListeDates() {
         //service annulé
         (moment(moment(depart, 'YYYY-MM-DD HH:mm')) > moment(moment(data.file.changeTime))) 
         && status === 'EventCancelled') {
-        return <Container>
-        <Text3>{toWideAlphanumeric(moment(moment(array.node.depart, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))}　<wbr/>
+        return <Container key={codelangkey}>
+        <Text4 $style={{ backgroundColor: shufflecouleurslignes[key], cursor: 'not-allowed' }}>{toWideAlphanumeric(moment(moment(array.node.depart, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))}　<wbr/>
           <Span7>キャンセル</Span7>　<wbr/>
           <Span8>{denomination}</Span8>
-        </Text3>
+        </Text4>
         <Hr />
       </Container>}
       else { 
