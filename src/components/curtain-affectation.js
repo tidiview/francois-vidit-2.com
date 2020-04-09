@@ -215,8 +215,15 @@ function ListeDates() {
   }
   `} render={data => 
   <Layout id='realtime-schedule'>
-    <H4>リアルタイム・<wbr />スケジュール</H4>
-    <Text2>以下に<wbr />表示されているのは<wbr /><Span1>一般の申し込みが<wbr />可能なツアーのみ</Span1>です。<wbr />{toWideAlphanumeric(moment(moment(data.file.changeTime)).format('YYYY年MM月DD日（ddd）HH：mm'))}（パリ）<wbr />{toWideAlphanumeric(moment(moment(data.file.changeTime)).utcOffset(9).format('HH：mm'))}（東京）<wbr />の情報です。
+    <H4>
+      リアルタイム・<wbr />スケジュール
+    </H4>
+    <Text2>
+      以下に<wbr />表示されているのは<wbr />
+      <Span1>一般の申し込みが<wbr />可能なツアーのみ</Span1>
+      です。<wbr />
+      {toWideAlphanumeric(moment(moment(data.file.changeTime)).format('YYYY年MM月DD日（ddd）HH：mm'))}（パリ）<wbr />{toWideAlphanumeric(moment(moment(data.file.changeTime)).utcOffset(9).format('HH：mm'))}
+      （東京）<wbr />の情報です。
     </Text2>
     <Hr />
     {data.allAffectationYaml.edges.map((array, key) => {
@@ -246,10 +253,18 @@ function ListeDates() {
         && (moment(moment(depart, 'YYYY-MM-DD HH:mm')) < moment(moment(data.file.changeTime)))
         && (status !== 'EventCancelled')) {
         return <Container key={codelangkey}>
-          <Text4 $style={{ backgroundColor: shufflecouleurslignes[0] }}>{toWideAlphanumeric(moment(moment(depart, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))} <wbr/>　
+          <Text4 $style={{ backgroundColor: shufflecouleurslignes[0] }}>
+            {toWideAlphanumeric(moment(moment(depart, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))}　<wbr/>
             <Span2 $style={{ borderBottomStyle: 'none' }}>{denomination}</Span2>　<wbr/>
-            <Span3><Span4>ツアーコード</Span4><Span5>{code}</Span5></Span3>　<wbr/>
-            <Span9>只今案内中</Span9>
+            <Span3>
+              <Span4>
+                ツアーコード
+              </Span4>
+              <Span5>{code}</Span5>
+            </Span3>　<wbr/>
+            <Span9>
+              只今案内中
+            </Span9>
           </Text4>
           <Hr />
         </Container>} 

@@ -1,26 +1,31 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import CurtainMeta from '../components/curtain-meta'
 
-export default () => (
-  <>
-    <StaticQuery
-      query={graphql`
-        query ImageQuery {
-          file(relativePath: { eq: "images/landing-curtain-2240.jpg" }) {
-            childImageSharp {
-              fluid(maxWidth: 1600) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
+/*
+ * This component is built using `gatsby-image` to automatically serve optimized
+ * images with lazy loading and reduced file sizes. The image is loaded using a
+ * `useStaticQuery`, which allows us to load the image from directly within this
+ * component, rather than having to pass the image data down from pages.
+ *
+ * For more information, see the docs:
+ * - `gatsby-image`: https://gatsby.dev/gatsby-image
+ * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
+ */
+
+const Image = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "images/landing-curtain-2240.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1600) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
-      `}
-      render={data => (
-        <Img style={{ height:'100vh' }} imgStyle={{ objectPosition:'left' }} fluid={data.file.childImageSharp.fluid} />
-      )}
-    />
-    <CurtainMeta></CurtainMeta>
-  </>
-)
+      }
+    }
+  `)
+  return <Img style={{ height:'100vh' }} imgStyle={{ objectPosition:'left' }} fluid={data.placeholderImage.childImageSharp.fluid} />
+}
+
+export default Image

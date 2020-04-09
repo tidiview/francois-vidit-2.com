@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/header'
 import CurtainLanding from '../components/curtain-landing'
+import CurtainMeta from '../components/curtain-meta'
 import CurtainBlog from '../components/curtain-blog'
 import CurtainDocs from '../components/curtain-docs'
 import CurtainProfile from '../components/curtain-profile'
@@ -12,6 +13,7 @@ export default () => (
   <>
     <Header id="top"></Header>
     <CurtainLanding></CurtainLanding>
+    <CurtainMeta></CurtainMeta>
     <CurtainBlog></CurtainBlog>
     <CurtainDocs></CurtainDocs>
     <CurtainProfile></CurtainProfile>
