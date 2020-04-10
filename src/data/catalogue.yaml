@@ -2,6 +2,7 @@
   lang: 'ja'
   cityvisionlink: 'https://www.pariscityvision.com/jp/versailles-trianon-1-day-tour'
   price: '154'
+  length: "PT10H"
   priceValidUntil: '2020-11-01T00:00:00+02:00'
   cityvisionimage: 'https://cdn.pariscityvision.com/library/image/4385.jpg'
   denomination: 'ヴェルサイユ宮殿とトリアノン離宮ガイド付き見学とラ・プティット・ヴェニズでのお昼食一日ツアー'
@@ -11,6 +12,7 @@
   lang: 'ja'
   cityvisionlink: 'https://www.pariscityvision.com/jp/bruges-day-tour-from-paris'
   price: '169'
+  length: "PT13H30M"
   priceValidUntil: '2020-11-01T00:00:00+02:00'
   cityvisionimage: 'https://cdn.pariscityvision.com/library/image/1615.jpg'
   denomination: 'パリ発ガイド付きブルージュ一日観光ツアー'
@@ -20,6 +22,7 @@
   lang: 'en'
   cityvisionlink: 'https://www.pariscityvision.com/en/guided-tour-louvre'
   price: '67'
+  length: "PT2H30M"
   priceValidUntil: '2020-11-01T00:00:00+02:00'
   cityvisionimage: 'https://cdn.pariscityvision.com/library/image/6615.jpg'
   denomination: '英語でのガイド付きルーブル美術館見学'
@@ -29,6 +32,7 @@
   lang: 'ja'
   cityvisionlink: 'https://www.pariscityvision.com/jp/reims-champagne'
   price: '149'
+  length: "PT10H30M"
   priceValidUntil: '2020-11-01T00:00:00+02:00'
   cityvisionimage: 'https://cdn.pariscityvision.com/library/image/3811.jpg'
   denomination: 'シャンパーニュ地方、ガイド付きランス大聖堂見学とシャンパン試飲一日ツアー'
@@ -38,6 +42,7 @@
   lang: 'ja'
   cityvisionlink: 'https://www.pariscityvision.com/jp/mont-saint-michel-lunch-included'
   price: '175'
+  length: "PT14H"
   priceValidUntil: '2020-11-01T00:00:00+02:00'
   cityvisionimage: 'https://cdn.pariscityvision.com/media/catalog/product/cache/5/image/755x433/9df78eab33525d08d6e5fb8d27136e95/m/s/ms1-04-mont-saint-michel-view_1.jpg'
   denomination: 'パリ発ガイド付きモン・サン＝ミシェル観光ツアー（昼食付き）'
@@ -47,6 +52,7 @@
   lang: 'en'
   cityvisionlink: 'https://www.pariscityvision.com/en/giverny-versailles-tour'
   price: '199'
+  length: "PT10H30M"
   priceValidUntil: '2020-11-01T00:00:00+02:00'
   cityvisionimage: 'https://cdn.pariscityvision.com/library/image/2590.jpg'
   denomination: '一日観光：英語でのジヴェルニーとヴェルサイユ宮殿観光ツアー、観光ガイドとランチ付き'
@@ -56,6 +62,7 @@
   lang: 'en'
   cityvisionlink: 'https://www.pariscityvision.com/en/louvre-eiffel-tower-lunch-notre-dame'
   price: '190'
+  length: "PT10H"
   priceValidUntil: '2020-11-01T00:00:00+02:00'
   cityvisionimage: 'https://cdn.pariscityvision.com/library/image/3471.jpg'
   denomination: '英語でのパリ市内とルーブル美術館一日散策ツアー、エッフェル塔での昼食付き'
@@ -65,6 +72,7 @@
   lang: 'en'
   cityvisionlink: 'https://www.pariscityvision.com/en/palais-royal-garnier-opera-tour'
   price: '38'
+  length: "PT3H"
   priceValidUntil: '2020-11-01T00:00:00+02:00'
   cityvisionimage: 'https://cdn.pariscityvision.com/library/image/6590.jpg'
   denomination: '英語でのパサージュ・クーヴェルとガルニエ宮ガイド付き散策見学'
@@ -74,6 +82,7 @@
   lang: 'ja'
   cityvisionlink: 'https://www.pariscityvision.com/jp/loire-castles-tour'
   price: '159'
+  length: "PT13H15M"
   priceValidUntil: '2020-11-01T00:00:00+02:00'
   cityvisionimage: 'https://cdn.pariscityvision.com/library/image/1819.jpg'
   denomination: 'ロワールの古城のガイド付きツアーとワインテイスティング'

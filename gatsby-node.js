@@ -11,7 +11,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       code: String!
       lang: String!
       depart: Date! @dateformat
-      length: Date! @dateformat
     }
     type CatalogueYaml implements Node & Codelang {
       codelang: String!
@@ -19,6 +18,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       lang: String!
       cityvisionlink: String!
       denomination: String!
+      length: Date! @dateformat
     }
   `
   

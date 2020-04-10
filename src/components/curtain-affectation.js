@@ -198,7 +198,6 @@ function ListeDates() {
           depart
           code
           lang
-          length
           status
         }
       }
@@ -209,6 +208,7 @@ function ListeDates() {
           codelang
           cityvisionlink
           denomination
+          length
         }
       }
     }
@@ -231,12 +231,12 @@ function ListeDates() {
       let code = array.node.code
       let codelang = array.node.codelang
       let status = array.node.status
-      let length = array.node.length
       let array2 = data.allCatalogueYaml.edges.map(item => 
         { let container = {}
         container['codelang'] = item.node.codelang
         container['cityvisionlink'] = item.node.cityvisionlink
         container['denomination'] = item.node.denomination
+        container['length'] = item.node.length
         if (codelang === item.node.codelang) {
           return container } 
         else {
@@ -244,6 +244,7 @@ function ListeDates() {
         let filteredarray2 = array2.filter(item => item != null)[0]
       let cityvisionlink = filteredarray2.cityvisionlink
       let denomination = filteredarray2.denomination
+      let length = filteredarray2.length
       let firstcodelangkey = [codelang, key]
       let codelangkey = firstcodelangkey.join('')
       if (
