@@ -12,7 +12,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       lang: String!
       depart: Date! @dateformat
     }
-    type CatalogueYaml implements Node & Codelang {
+    type CatalogueYaml implements Node & Codelang @infer {
       codelang: String!
       code: String!
       lang: String!
@@ -21,7 +21,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       length: Date! @dateformat
     }
   `
-  
+
   createTypes(typeDefs)
 }
 exports.createResolvers = ({ createResolvers }) => {
