@@ -5,12 +5,19 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "clean": "gatsby clean"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@sanity/cli": "^1.149.9",
     "@svgr/webpack": "^5.0.1",
-    "gatsby": "^2.18.17",
-    "gatsby-cli": "^2.8.22",
+    "gatsby": "^2.21.5",
+    "gatsby-cli": "^2.12.5",
     "gatsby-i18n": "^1.1.8",
     "gatsby-image": "^2.2.37",
     "gatsby-plugin-i18n": "^1.0.1",
@@ -22,6 +29,7 @@
     "gatsby-plugin-styletron": "^4.1.22",
     "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-source-filesystem": "^2.1.43",
+    "gatsby-source-sanity": "^5.0.6",
     "gatsby-transformer-remark": "^2.6.48",
     "gatsby-transformer-sharp": "^2.3.9",
     "gatsby-transformer-yaml": "^2.2.27",
@@ -33,7 +41,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "2.0.5"
   },
   "repository": {
     "type": "git",
