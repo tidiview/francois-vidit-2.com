@@ -43,7 +43,7 @@ const Text = styled('p', {
 });
 Text.displayName = 'Text';
 
-const Text2 = withStyle(Text, {
+const Text2 = styled(Text, {
   margin: '0.3rem 0',
   cursor: 'context-menu',
   wordBreak: 'keep-all',
@@ -61,6 +61,7 @@ const Hr = styled('hr', {
     borderBottom: '1px solid #e6e6e6',
     borderRight: 'none',
     margin: '0 0',
+
 });
 Hr.displayName = 'Hr';
 
@@ -187,50 +188,27 @@ export default () => (
 
 function ListeDates() {
   return <StaticQuery query={graphql`{
-    sanityService {
-      _updatedAt
-      codeListLang {
-        codeList {
-          invariant {
-            availability
-            priceValidUntil
-            rootCityvision
-            rootCityvisionCdnImage
-          }
+    file(extension: {eq: "yaml"}) {
+      changeTime
+    }
+    allAffectationYaml(sort: {fields: depart, order: ASC}) {
+      edges {
+        node {
+          codelang
+          depart
+          code
+          lang
+          status
         }
       }
     }
-    allSanityService(sort: {fields: startDate, order: ASC}) {
+    allCatalogueYaml {
       edges {
         node {
-          codeListLang {
-            breadcrumb {
-              ja
-            }
-            cityvisionLinkUri
-            codeList {
-              cityvisionImage
-              code
-              description
-              length
-              price
-              startHour
-              startQuarter
-            }
-            description {
-              ja
-            }
-            intitule {
-              ja
-            }
-            lang {
-              name
-              title
-            }
-          }
-          releaseDate
-          startDate(formatString: "YYYY-MM-DD HH:mm")
-          status
+          codelang
+          cityvisionlink
+          denomination
+          length
         }
       }
     }
@@ -244,33 +222,46 @@ function ListeDates() {
       以下に<wbr />表示されているのは<wbr />
       <Span1>一般の申し込みが<wbr />可能なツアーのみ</Span1>
       です。<wbr />
-      {toWideAlphanumeric(moment(moment(data.sanityService._updatedAt)).format('YYYY年MM月DD日（ddd）HH：mm'))}（パリ）<wbr />{toWideAlphanumeric(moment(moment(data.sanityService._updatedAt)).utcOffset(9).format('HH：mm'))}
+      {toWideAlphanumeric(moment(moment(data.file.changeTime)).format('YYYY年MM月DD日（ddd）HH：mm'))}（パリ）<wbr />{toWideAlphanumeric(moment(moment(data.file.changeTime)).utcOffset(9).format('HH：mm'))}
       （東京）<wbr />の情報です。
     </Text2>
-    <Hr />   
-      {data.allSanityService.edges.map((array, key) => {
-        let startDate = moment(array.node.startDate).add(array.node.codeListLang.codeList.startHour, 'hours').add(array.node.codeListLang.codeList.startQuarter, 'minutes')
-        let codeListLang = array.node.codeListLang
-        let status = array.node.status
-        let _updatedAt = array.node._updatedAt
-        let codeIndex = [codeListLang.codeList.code, key].join('')
-        let rootCityvision = data.sanityService.codeListLang.codeList.invariant.rootCityvision
-        console.log(startDate)
+    <Hr />
+    {data.allAffectationYaml.edges.map((array, key) => {
+      let depart = array.node.depart
+      let code = array.node.code
+      let codelang = array.node.codelang
+      let status = array.node.status
+      let array2 = data.allCatalogueYaml.edges.map(item => 
+        { let container = {}
+        container['codelang'] = item.node.codelang
+        container['cityvisionlink'] = item.node.cityvisionlink
+        container['denomination'] = item.node.denomination
+        container['length'] = item.node.length
+        if (codelang === item.node.codelang) {
+          return container } 
+        else {
+          return null }})
+        let filteredarray2 = array2.filter(item => item != null)[0]
+      let cityvisionlink = filteredarray2.cityvisionlink
+      let denomination = filteredarray2.denomination
+      let length = filteredarray2.length
+      let firstcodelangkey = [codelang, key]
+      let codelangkey = firstcodelangkey.join('')
       if (
         // service en cours (commencé), non annulé
         (key === 0)
-        && (moment(startDate).add(moment.duration(codeListLang.codeList.length)) > moment(moment(_updatedAt))) 
-        && (moment(moment(startDate, 'YYYY-MM-DD HH:mm')) < moment(moment(_updatedAt)))
+        && (moment(moment(depart, 'YYYY-MM-DD HH:mm').add(moment.duration(length))) > moment(moment(data.file.changeTime))) 
+        && (moment(moment(depart, 'YYYY-MM-DD HH:mm')) < moment(moment(data.file.changeTime)))
         && (status !== 'EventCancelled')) {
-        return <Container key={codeIndex}>
+        return <Container key={codelangkey}>
           <Text4 $style={{ backgroundColor: shufflecouleurslignes[0] }}>
-            {toWideAlphanumeric(moment(moment(startDate, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))}　<wbr/>
-            <Span2 $style={{ borderBottomStyle: 'none' }}>{codeListLang.intitule.ja}</Span2>　<wbr/>
+            {toWideAlphanumeric(moment(moment(depart, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))}　<wbr/>
+            <Span2 $style={{ borderBottomStyle: 'none' }}>{denomination}</Span2>　<wbr/>
             <Span3>
               <Span4>
                 ツアーコード
               </Span4>
-              <Span5>{codeListLang.codeList.code}</Span5>
+              <Span5>{code}</Span5>
             </Span3>　<wbr/>
             <Span9>
               只今案内中
@@ -280,14 +271,14 @@ function ListeDates() {
         </Container>} 
       else if (
         // service prévu, non commencé, non annulé
-        (moment(moment(startDate, 'YYYY-MM-DD HH:mm')) > moment(moment(_updatedAt))) 
+        (moment(moment(depart, 'YYYY-MM-DD HH:mm')) > moment(moment(data.file.changeTime))) 
         && (status !== 'EventCancelled')
         ) {
-        return <Container key={codeIndex}>
-          <A1 aria-label={'シティヴィジョン・' + rootCityvision + codeListLang.codeList.code + '・ページーへ移動する'} rel='preload' href={rootCityvision + codeListLang.lang.name + '/' + codeListLang.cityvisionLinkUri} alt={'申し込みはこちら：' + rootCityvision + codeListLang.lang.name + '/' + codeListLang.cityvisionLinkUri} title={'申し込みはこちら：' + rootCityvision + codeListLang.lang.name + '/' + codeListLang.cityvisionLinkUri}>
-          <Text3 $style={{ backgroundColor: shufflecouleurslignes[key] }}>{toWideAlphanumeric(moment(moment(startDate, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))} <wbr/>　
-            <Span2>{codeListLang.intitule.ja}</Span2>　<wbr/>
-            <Span3><Span4>ツアーコード</Span4><Span5>{codeListLang.codeList.code}</Span5></Span3>　<wbr/>
+        return <Container key={codelangkey}>
+          <A1 aria-label={'シティヴィジョン・' + code + '・ページーへ移動する'} rel='preload' href={cityvisionlink} alt={'申し込みはこちら：' + cityvisionlink} title={'申し込みはこちら：' + cityvisionlink}>
+          <Text3 $style={{ backgroundColor: shufflecouleurslignes[key] }}>{toWideAlphanumeric(moment(moment(depart, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))} <wbr/>　
+            <Span2>{denomination}</Span2>　<wbr/>
+            <Span3><Span4>ツアーコード</Span4><Span5>{code}</Span5></Span3>　<wbr/>
             <Span6>申し込みはこちら...</Span6>
           </Text3>
           </A1>
@@ -295,16 +286,17 @@ function ListeDates() {
         </Container>}
       else if (
         //service annulé
-        (moment(moment(startDate, 'YYYY-MM-DD HH:mm')) > moment(moment(_updatedAt))) 
+        (moment(moment(depart, 'YYYY-MM-DD HH:mm')) > moment(moment(data.file.changeTime))) 
         && status === 'EventCancelled') {
-        return <Container key={codeIndex}>
-        <Text4 $style={{ backgroundColor: shufflecouleurslignes[key], cursor: 'not-allowed' }}>{toWideAlphanumeric(moment(moment(startDate, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))}　<wbr/>
+        return <Container key={codelangkey}>
+        <Text4 $style={{ backgroundColor: shufflecouleurslignes[key], cursor: 'not-allowed' }}>{toWideAlphanumeric(moment(moment(array.node.depart, 'YYYY-MM-DD HH:mm')).format('MM月DD日（ddd）'))}　<wbr/>
           <Span7>キャンセル</Span7>　<wbr/>
-          <Span8>{codeListLang.intitule.ja}</Span8>
+          <Span8>{denomination}</Span8>
         </Text4>
         <Hr />
       </Container>}
-      else { return '' }
+      else { 
+      return ''}
     } )}
   </Layout>}></StaticQuery>;
 }

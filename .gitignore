@@ -67,11 +67,3 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
-*.gz
-studio/static/favicon.ico
-studio/static/.gitkeep
-francois-vidit2-com.code-workspace
-francois-vidit2-com.code-workspace
-studio/sanity.code-workspace
-*.code-workspace
-studio/schemas/data/event.jsonld
